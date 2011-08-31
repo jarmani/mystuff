@@ -1,0 +1,23 @@
+$OpenBSD$
+--- configure.orig	Mon Oct 18 11:14:46 2010
++++ configure	Mon Oct 18 11:14:57 2010
+@@ -16651,7 +16651,8 @@ GPEOF
+         status=${line#*:}
+         let extracols=34-${#plugin}
+         echo -n "$plugin"
+-        for (( i=0; $i<$extracols; i++ )); do
++        for i in $(jot $extracols 1 $extracols 1) 
++        do
+             echo -n ' '
+         done
+         echo $status
+@@ -16668,7 +16669,8 @@ GPEOF
+         status=${line#*:}
+         let extracols=34-${#plugin}
+         echo -n "$plugin"
+-        for (( i=0; $i<$extracols; i++ )); do
++        for i in $(jot $extracols 1 $extracols 1) 
++        do
+             echo -n ' '
+         done
+         echo $status

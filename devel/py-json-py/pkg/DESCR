@@ -1,0 +1,3 @@
+json.py is an implementation of a JSON (http://json.org) reader and
+writer in Python. jsontests.py are unit tests demonstrating the
+correctness of the implementation.
