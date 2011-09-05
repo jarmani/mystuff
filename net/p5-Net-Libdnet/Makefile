@@ -8,7 +8,7 @@ CATEGORIES =	net
 
 MAINTAINER =	Jonathan Armani <armani@openbsd.org>
 
-# BSD License
+# BSD
 PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
