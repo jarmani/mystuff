@@ -23,6 +23,4 @@ EXTRACT_SUFX =  .tgz
 
 MODULES = 	lang/python
 
-WANTLIB +=      ${MODPY_WANTLIB}
-
 .include <bsd.port.mk>
