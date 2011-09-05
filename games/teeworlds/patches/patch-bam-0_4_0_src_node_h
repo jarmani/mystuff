@@ -1,0 +1,21 @@
+$OpenBSD$
+--- bam-0.4.0/src/node.h.orig	Mon Apr 11 18:59:45 2011
++++ bam-0.4.0/src/node.h	Mon Apr 11 19:02:26 2011
+@@ -12,7 +12,7 @@ struct NODELINK
+ {
+ 	struct NODE *node;
+ 	struct NODELINK *next;
+-};
++} __attribute__((packed));
+ 
+ struct NODETREELINK
+ {
+@@ -105,7 +105,7 @@ struct NODE
+ 	unsigned cached:1; /* set if the node should be considered as cached */
+ 	
+ 	volatile unsigned workstatus:2; /* build status of the node, NODESTATUS_* flags */
+-};
++} __attribute__((packed));
+ 
+ /* cache node */
+ struct CACHENODE

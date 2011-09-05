@@ -1,0 +1,10 @@
+$OpenBSD$
+--- bam-0.4.0/make_unix.sh.orig	Mon Aug  9 20:08:24 2010
++++ bam-0.4.0/make_unix.sh	Mon Apr 11 18:47:23 2011
+@@ -1,4 +1,4 @@
+ #!/bin/sh
+-gcc -Wall -ansi -pedantic src/tools/txt2c.c -o src/tools/txt2c
++${CC} ${CFLAGS} -Wall -ansi -pedantic src/tools/txt2c.c -o src/tools/txt2c
+ src/tools/txt2c src/base.lua src/tools.lua src/driver_gcc.lua src/driver_cl.lua > src/internal_base.h
+-gcc -Wall -ansi -pedantic src/*.c src/lua/*.c -o bam -I src/lua -lm -lpthread -ldl -O2 -rdynamic $*
++${CC} ${CFLAGS} -Wall -ansi -pedantic src/*.c src/lua/*.c -o bam -I src/lua -lm -lpthread -O2 -rdynamic $*

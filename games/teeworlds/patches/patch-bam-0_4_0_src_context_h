@@ -1,0 +1,21 @@
+$OpenBSD$
+--- bam-0.4.0/src/context.h.orig	Mon Apr 11 19:09:17 2011
++++ bam-0.4.0/src/context.h	Mon Apr 11 19:09:42 2011
+@@ -8,7 +8,7 @@ struct DEFERRED
+ 	struct NODE *node;
+ 	int (*run)(struct CONTEXT *context, struct DEFERRED *info);
+ 	void *user;
+-};
++} __attribute__((packed));
+ 
+ struct CONTEXT
+ {
+@@ -38,7 +38,7 @@ struct CONTEXT
+ 	int num_commands;
+ 	volatile int errorcode;
+ 	volatile int current_cmd_num;
+-};
++} __attribute__((packed));
+ 
+ const char *context_get_path(struct lua_State *L);
+ struct CONTEXT *context_get_pointer(struct lua_State *L);

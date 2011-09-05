@@ -1,0 +1,21 @@
+$OpenBSD$
+--- bam.lua.orig	Mon Apr 11 18:58:00 2011
++++ bam.lua	Mon Apr 11 18:58:39 2011
+@@ -18,7 +18,7 @@ function Script(name)
+ 	if family == "windows" then
+ 		return str_replace(name, "/", "\\")
+ 	end
+-	return "python " .. name
++	return "${MODPY_BIN} " .. name
+ end
+ 
+ function CHash(output, ...)
+@@ -154,7 +154,7 @@ function build(settings)
+ 			settings.link.frameworks:Add("Carbon")
+ 			settings.link.frameworks:Add("AppKit")
+ 		else
+-			settings.link.libs:Add("pthread")
++			settings.link.flags:Add("-pthread")
+ 		end
+ 	elseif family == "windows" then
+ 		settings.link.libs:Add("gdi32")
