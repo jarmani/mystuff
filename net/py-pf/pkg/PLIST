@@ -1,5 +1,7 @@
 @comment $OpenBSD$
 lib/python${MODPY_VERSION}/site-packages/PF/
+lib/python${MODPY_VERSION}/site-packages/PF/PFAltq.py
+lib/python${MODPY_VERSION}/site-packages/PF/PFAltq.pyc
 lib/python${MODPY_VERSION}/site-packages/PF/PFConstants.py
 lib/python${MODPY_VERSION}/site-packages/PF/PFConstants.pyc
 lib/python${MODPY_VERSION}/site-packages/PF/PFRule.py
@@ -18,4 +20,4 @@ lib/python${MODPY_VERSION}/site-packages/PF/_PFStruct.py
 lib/python${MODPY_VERSION}/site-packages/PF/_PFStruct.pyc
 lib/python${MODPY_VERSION}/site-packages/PF/__init__.py
 lib/python${MODPY_VERSION}/site-packages/PF/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/py_PF-0.0.4-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/py_PF-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info

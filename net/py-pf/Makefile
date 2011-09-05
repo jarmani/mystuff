@@ -2,7 +2,7 @@
 
 COMMENT = python interface to packet filter
 
-MODPY_EGG_VERSION =	0.0.5
+MODPY_EGG_VERSION =	0.0.6
 DISTNAME =		py-PF-${MODPY_EGG_VERSION}
 PKGNAME =           	${DISTNAME:L}
 
