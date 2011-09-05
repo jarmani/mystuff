@@ -1,0 +1,2 @@
+Py-PF is a pure-Python module that allows you to manage OpenBSD's Packet 
+Filter from Python scripts.

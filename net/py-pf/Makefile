@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/19 22:31:38 espie Exp $
+# $OpenBSD$
 
 COMMENT = python interface to packet filter
 
@@ -18,8 +18,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-#MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=py-pf/}
-MASTER_SITES =	http://localhost/dist/
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=py-pf/}
 EXTRACT_SUFX =  .tgz
 
 MODULES = 	lang/python
