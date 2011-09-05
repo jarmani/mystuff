@@ -19,6 +19,6 @@ BUILD_DEPENDS =  ${RUN_DEPENDS}
 RUN_DEPENDS =	net/libdnet \
 		devel/p5-Class-Gomor
 
-CONFIGURE_ARGS += LIBS='-L${LOCALBASE}/lib' INC='-I${LOCALBASE}/include'
+CONFIGURE_ARGS += LIBS='-L${LOCALBASE}/lib -ldnet' INC='-I${LOCALBASE}/include'
 
 .include <bsd.port.mk>
