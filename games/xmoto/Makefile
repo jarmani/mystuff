@@ -7,7 +7,7 @@ DISTNAME =	xmoto-${V}-src
 PKGNAME =	xmoto-${V}
 CATEGORIES =	games
 
-MAINTAINER =	Jonathan Armani <dbd@asystant.net>
+MAINTAINER =	Antti Harri <iku@openbsd.fi>
 HOMEPAGE =	http://xmoto.tuxfamily.org/
 
 MASTER_SITES =	http://download.tuxfamily.org/xmoto/xmoto/${V}/
