@@ -5,7 +5,7 @@ COMMENT =	challenging 2D motocross platform game
 V =	 	0.5.7
 DISTNAME =	xmoto-${V}-src
 PKGNAME =	xmoto-${V}
-CATEGORIES =	games
+CATEGORIES =	games x11
 
 MAINTAINER =	Antti Harri <iku@openbsd.fi>
 HOMEPAGE =	http://xmoto.tuxfamily.org/
@@ -18,8 +18,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += GL GLU SDL X11 c m pthread pthread-stubs stdc++ xcb z
-WANTLIB += SDL_mixer SDL_net SDL_ttf bz2 curl jpeg ode lua png sqlite3
+WANTLIB += GL GLU SDL SDL_mixer SDL_net SDL_ttf X11 bz2 c curl iconv jpeg lua m 
+WANTLIB += ode png pthread sqlite3 stdc++ xdg-basedir z
 
 MODULES=	devel/gettext
 
