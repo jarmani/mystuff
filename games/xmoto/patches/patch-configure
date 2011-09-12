@@ -5,8 +5,8 @@ $OpenBSD$
    fi
  
    if test "$USE_NLS" = "yes"; then
-+       LIBINTL="-lintl -liconv"
-+       LTLIBINTL="-lint -liconv"
++       LIBINTL=$LTLIBINTL
++       INTLLIBS=$LTLIBINTL
  
      if test "$gt_use_preinstalled_gnugettext" = "yes"; then
        if { eval "gt_val=\$$gt_func_gnugettext_libintl"; test "$gt_val" = "yes"; }; then
