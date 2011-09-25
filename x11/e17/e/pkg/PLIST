@@ -836,9 +836,5 @@ share/enlightenment/doc/documentation.html
 share/enlightenment/doc/enlightenment.png
 share/enlightenment/doc/illume2.html
 share/enlightenment/doc/illume2.png
-share/examples/enlightenment/
-share/examples/enlightenment/sysactions.conf
-share/examples/firmware/
-share/examples/rc.d/
 share/xsessions/
 share/xsessions/enlightenment.desktop
