@@ -18,8 +18,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += GL GLU SDL SDL_mixer SDL_net SDL_ttf X11 bz2 c curl iconv jpeg lua m 
-WANTLIB += ode png pthread sqlite3 stdc++ xdg-basedir z
+WANTLIB += GL GLU SDL SDL_mixer SDL_net SDL_ttf X11 bz2 c curl jpeg  
+WANTLIB += lua m ode png pthread sqlite3 stdc++ xdg-basedir z
 
 MODULES=	devel/gettext
 
