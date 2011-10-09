@@ -1,9 +1,7 @@
 # $OpenBSD: Makefile,v 1.17 2011/03/15 19:41:00 jasper Exp $
 
 COMMENT =		implementations of freedesktop.org specifications
-DISTNAME =		efreet-1.0.0
-
-EPOCH =			2
+DISTNAME =		efreet-1.0.${VERSION}
 
 SO_VERSION =		1.0
 # NOTE: Must bump minor version if any shlib's are removed from the

@@ -1,7 +1,7 @@
 $OpenBSD: patch-src_modules_wizard_page_010_c,v 1.2 2011/01/16 01:00:11 laurent Exp $
---- src/modules/wizard/page_010.c.orig	Sat Jan  8 16:24:29 2011
-+++ src/modules/wizard/page_010.c	Sat Jan  8 16:25:14 2011
-@@ -71,7 +71,11 @@ wizard_page_init(E_Wizard_Page *pg __UNUSED__)
+--- src/modules/wizard/page_010.c.orig	Sat Oct  8 18:48:09 2011
++++ src/modules/wizard/page_010.c	Sat Oct  8 21:56:14 2011
+@@ -73,7 +73,11 @@ wizard_page_init(E_Wizard_Page *pg __UNUSED__)
  {
     FILE *output;
  

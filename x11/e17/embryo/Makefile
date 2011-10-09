@@ -1,10 +1,7 @@
 # $OpenBSD: Makefile,v 1.10 2011/03/15 19:41:17 jasper Exp $
 
 COMMENT =		C like scripting language used in E17
-
-DISTNAME =		embryo-1.0.0
-
-EPOCH =			2
+DISTNAME =		embryo-1.0.${VERSION}
 
 SHARED_LIBS +=		embryo 1.0
 

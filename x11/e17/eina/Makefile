@@ -1,9 +1,7 @@
 # $OpenBSD: Makefile,v 1.7 2011/03/06 21:35:41 jasper Exp $
 
 COMMENT =		EFL API for data types
-DISTNAME =		eina-1.0.0
-
-EPOCH=			1
+DISTNAME =		eina-1.0.${VERSION}
 
 SHARED_LIBS +=  eina                 1.0      # 1.0
 
@@ -19,8 +17,7 @@ MODULES =		converters/libiconv
 
 USE_LIBTOOL =		Yes
 
-CONFIGURE_ARGS =	--disable-doc \
-			--enable-default-mempool
+CONFIGURE_ARGS =	--disable-doc
 # mempool
 #			--enable-default-mempool
 #			--enable-mempool-chained-pool
@@ -38,7 +35,6 @@ CONFIGURE_ARGS =	--disable-doc \
 #			--disable-assert
 
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-			ac_cv_func_dirfd=yes
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" 
 
 .include <bsd.port.mk>

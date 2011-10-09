@@ -1,11 +1,7 @@
 # $OpenBSD: Makefile,v 1.29 2011/07/18 19:06:37 naddy Exp $
 
 COMMENT =		the enlightened window manager
-DISTNAME =		enlightenment-0.16.999.54504
-EXTRACT_SUFX=		.tar.bz2
-
-REVISION =		2
-EPOCH =			0
+DISTNAME =		enlightenment-0.16.${VERSION}
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -34,8 +30,12 @@ LIB_DEPENDS =		x11/e17/edje>=1.0 \
 RUN_DEPENDS =		devel/desktop-file-utils
 
 CONFIGURE_ARGS +=	--disable-doc \
-			--disable-nls
-
+			--disable-nls \
+			--disable-mount-hal \
+			--disable-device-udev \
+			--disable-mount-udisks \
+			--disable-mixer \
+			--disable-illume2 # make edje_cc segfault
 # Broken configure shit HAVE_ECORE_TXT=TRUE not defined correctly
 # does not appear in AM_CONDITIONAL . Usually this means the macro
 # was only invoked conditionally.

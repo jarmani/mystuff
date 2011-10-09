@@ -1,9 +1,7 @@
 # $OpenBSD: Makefile,v 1.19 2011/03/15 19:40:04 jasper Exp $
 
 COMMENT =		complex graphical design & layout library
-DISTNAME =		edje-1.0.0
-
-EPOCH =			2
+DISTNAME =		edje-1.0.${VERSION}
 
 SHARED_LIBS +=		edje 1.0
 

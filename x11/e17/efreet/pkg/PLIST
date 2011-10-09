@@ -13,6 +13,7 @@ include/efreet-1/efreet_uri.h
 include/efreet-1/efreet_utils.h
 lib/efreet/
 @bin lib/efreet/efreet_desktop_cache_create
+@bin lib/efreet/efreet_icon_cache_create
 lib/libefreet.a
 lib/libefreet.la
 lib/libefreet_mime.a

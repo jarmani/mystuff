@@ -4,7 +4,8 @@ CATEGORIES ?=		x11
 
 HOMEPAGE ?=		http://www.enlightenment.org/
 
-MASTER_SITES ?=		http://download.enlightenment.org/releases/ \
+MASTER_SITES ?=		http://kernelinvaders.com/tmp/ \
+			http://download.enlightenment.org/releases/ \
 			http://download.enlightenment.org/snapshots/LATEST/ \
 			http://download.enlightenment.org/snapshots/2010-11-12/ \
 			http://download.enlightenment.org/snapshots/2009-06-14/ \
@@ -20,9 +21,10 @@ MAINTAINER ?=		Laurent FANIS <laurent@openbsd.org>
 
 NO_REGRESS ?=		Yes
 
-#FLAVORS = debug
+VERSION ?=		999.63923
+
 #FLAVOR ?=
 #.if ${FLAVOR:L:Mdebug}
-#CFLAGS +=		-O0 -g
-#INSTALL_STRIP =
+CFLAGS +=		-O0 -g
+INSTALL_STRIP =
 #.endif

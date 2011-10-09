@@ -1,8 +1,7 @@
 # $OpenBSD: Makefile,v 1.20 2011/03/15 19:41:31 jasper Exp $
 
 COMMENT =		canvas API for X
-DISTNAME =		evas-1.0.0
-EPOCH =			2
+DISTNAME =		evas-1.0.${VERSION}
 
 SHARED_LIBS +=  evas                 1.0      # 1.0
 
@@ -23,7 +22,7 @@ WANTLIB += ssl tiff xcb xcb-render xcb-shm xml2 z
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS =		x11/e17/eet>=1.4 \
+LIB_DEPENDS =		x11/e17/eet>=1.4.999 \
 			graphics/libungif \
 			graphics/png \
 			graphics/tiff \
@@ -38,8 +37,9 @@ CONFIGURE_ARGS +=	--disable-doc \
 			--enable-small-dither-mask \
 			--enable-line-dither-mask \
 			--enable-word-cache \
-			--enable-metric-cache
-
+			--enable-metric-cache \
+			--disable-gl-x11 \
+			--disable-cpu-sse3
 # ARGB Conversion from 32 to other pixel depths (slower -> faster)(nice -> ugly)
 #			--enable-small-dither-mask
 #			--enable-line-dither-mask

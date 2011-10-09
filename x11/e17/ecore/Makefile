@@ -1,10 +1,7 @@
 # $OpenBSD: Makefile,v 1.18 2011/09/16 12:29:13 espie Exp $
 
 COMMENT =		core event/X abstraction layer
-DISTNAME =		ecore-1.0.0
-REVISION =		0
-
-EPOCH =			2
+DISTNAME =		ecore-1.0.${VERSION}
 
 SO_VERSION =		1.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -32,7 +29,7 @@ WANTLIB += jpeg m pcre pthread-stubs ssl xcb z
 LIB_DEPENDS =		devel/glib2 \
 			net/curl \
 			net/libcares \
-			x11/e17/evas>=1.0
+			x11/e17/evas>=1.0.999
 
 CONFIGURE_ARGS +=	--disable-doc \
 			--disable-gnutls \
