@@ -1,0 +1,17 @@
+$OpenBSD$
+--- src/modules/battery/Makefile.am.orig	Sun Oct 16 16:56:55 2011
++++ src/modules/battery/Makefile.am	Sun Oct 16 16:57:18 2011
+@@ -1,11 +1,8 @@
+ MAINTAINERCLEANFILES = Makefile.in
+ MODULE = battery
+ 
+-if HAVE_EEZE
+-  DEVICE_FILE = e_mod_udev.c
+-else
+-  DEVICE_FILE = e_mod_dbus.c
+-endif
++# XX temp
++DEVICE_FILE = e_mod_openbsd.c
+ 
+ # data files for the module
+ filesdir = $(libdir)/enlightenment/modules/$(MODULE)
