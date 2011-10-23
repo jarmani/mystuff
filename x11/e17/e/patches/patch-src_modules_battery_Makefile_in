@@ -1,0 +1,29 @@
+$OpenBSD$
+--- src/modules/battery/Makefile.in.orig	Sun Oct 23 19:45:45 2011
++++ src/modules/battery/Makefile.in	Sun Oct 23 19:47:43 2011
+@@ -81,9 +81,10 @@ am__installdirs = "$(DESTDIR)$(pkgdir)" "$(DESTDIR)$(b
+ 	"$(DESTDIR)$(filesdir)"
+ LTLIBRARIES = $(pkg_LTLIBRARIES)
+ am__module_la_SOURCES_DIST = e_mod_main.c e_mod_main.h e_mod_config.c \
+-	e_mod_dbus.c e_mod_udev.c
+-@HAVE_EEZE_FALSE@am__objects_1 = e_mod_dbus.lo
+-@HAVE_EEZE_TRUE@am__objects_1 = e_mod_udev.lo
++	e_mod_dbus.c e_mod_udev.c e_mod_openbsd.c
++#@HAVE_EEZE_FALSE@am__objects_1 = e_mod_dbus.lo
++#@HAVE_EEZE_TRUE@am__objects_1 = e_mod_udev.lo
++am__objects_1 = e_mod_openbsd.lo
+ am_module_la_OBJECTS = e_mod_main.lo e_mod_config.lo $(am__objects_1)
+ module_la_OBJECTS = $(am_module_la_OBJECTS)
+ AM_V_lt = $(am__v_lt_$(V))
+@@ -389,8 +390,9 @@ top_srcdir = @top_srcdir@
+ version_info = @version_info@
+ MAINTAINERCLEANFILES = Makefile.in
+ MODULE = battery
+-@HAVE_EEZE_FALSE@DEVICE_FILE = e_mod_dbus.c
+-@HAVE_EEZE_TRUE@DEVICE_FILE = e_mod_udev.c
++#@HAVE_EEZE_FALSE@DEVICE_FILE = e_mod_dbus.c
++#@HAVE_EEZE_TRUE@DEVICE_FILE = e_mod_udev.c
++DEVICE_FILE = e_mod_openbsd.c
+ 
+ # data files for the module
+ filesdir = $(libdir)/enlightenment/modules/$(MODULE)

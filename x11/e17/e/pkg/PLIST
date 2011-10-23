@@ -454,7 +454,7 @@ lib/enlightenment/utils/
 @bin lib/enlightenment/utils/enlightenment_fm
 @bin lib/enlightenment/utils/enlightenment_fm_op
 @bin lib/enlightenment/utils/enlightenment_init
-lib/enlightenment/utils/enlightenment_sys
+@bin lib/enlightenment/utils/enlightenment_sys
 @bin lib/enlightenment/utils/enlightenment_thumb
 lib/pkgconfig/enlightenment.pc
 lib/pkgconfig/everything.pc
