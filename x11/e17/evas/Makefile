@@ -2,6 +2,7 @@
 
 COMMENT =		canvas API for X
 DISTNAME =		evas-1.0.${VERSION}
+EPOCH =			3
 
 SHARED_LIBS +=  evas                 1.0      # 1.0
 

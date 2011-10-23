@@ -2,6 +2,7 @@
 
 COMMENT =		the enlightened window manager
 DISTNAME =		enlightenment-0.16.${VERSION}
+EPOCH =			1
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

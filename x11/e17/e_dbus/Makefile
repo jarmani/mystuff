@@ -2,6 +2,7 @@
 
 COMMENT =		enlightenment DBus component
 DISTNAME =		e_dbus-1.0.${VERSION}
+EPOCH =			2
 
 SO_VERSION =		1.0
 .for _lib in edbus enotify econnman ehal eofono ebluez eukit

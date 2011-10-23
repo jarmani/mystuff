@@ -2,6 +2,7 @@
 
 COMMENT =		EFL API for data types
 DISTNAME =		eina-1.0.${VERSION}
+EPOCH =			2
 
 SHARED_LIBS +=  eina                 1.0      # 1.0
 

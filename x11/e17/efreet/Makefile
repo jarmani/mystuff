@@ -2,6 +2,7 @@
 
 COMMENT =		implementations of freedesktop.org specifications
 DISTNAME =		efreet-1.0.${VERSION}
+EPOCH =			3
 
 SO_VERSION =		1.0
 # NOTE: Must bump minor version if any shlib's are removed from the
