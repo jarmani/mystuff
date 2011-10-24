@@ -12,7 +12,10 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += c m
+MODULES =		converters/libiconv
+LIB_DEPENDS =		x11/e17/eina>=1.0.999
+
+WANTLIB += c eina m pthread 
 
 USE_LIBTOOL =		Yes
 

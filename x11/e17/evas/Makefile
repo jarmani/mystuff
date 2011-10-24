@@ -14,12 +14,11 @@ PERMIT_DISTFILES_FTP =	Yes
 
 USE_LIBTOOL =		Yes
 
-WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
-WANTLIB += cairo croco-0.6 crypto drm eet eina expat fontconfig
-WANTLIB += freetype gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 jpeg m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs rsvg-2
-WANTLIB += ssl tiff xcb xcb-render xcb-shm xml2 z
+WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm cairo croco-0.6 
+WANTLIB += crypto drm eet eina expat ffi fontconfig freetype gdk_pixbuf-2.0 gif 
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 jpeg m 
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png 
+WANTLIB += pthread-stubs rsvg-2 ssl tiff xcb xcb-render xcb-shm xml2 z
 
 MODULES=		devel/gettext
 
