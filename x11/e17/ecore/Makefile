@@ -22,9 +22,9 @@ MODULES =		devel/gettext
 
 USE_LIBTOOL =		Yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama 
-WANTLIB += Xrandr Xrender Xss Xtst c cares crypto curl eet eina evas expat 
-WANTLIB += fontconfig freetype glib-2.0 idn jpeg m pcre pthread pthread-stubs 
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama 
+WANTLIB += Xrandr Xrender Xss Xtst c crypto curl eet eina evas expat 
+WANTLIB += fontconfig freetype glib-2.0 idn jpeg m pcre pthread 
 WANTLIB += ssl xcb z
 
 LIB_DEPENDS =		devel/glib2 \

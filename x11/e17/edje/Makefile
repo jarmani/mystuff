@@ -12,12 +12,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xss Xtst c cares crypto curl ecore ecore_con
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender Xss Xtst c crypto curl ecore ecore_con
 WANTLIB += ecore_evas ecore_file ecore_imf ecore_imf_evas ecore_input
 WANTLIB += ecore_input_evas ecore_x eet eina embryo evas expat fontconfig
-WANTLIB += freetype glib-2.0 idn jpeg m pcre pthread
-WANTLIB += pthread-stubs ssl xcb z lua
+WANTLIB += freetype glib-2.0 idn jpeg m pcre pthread ssl xcb z lua
 
 MODULES =		devel/gettext \
 			lang/lua

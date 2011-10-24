@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += c cares crypto curl ecore ecore_con ecore_file eet
+WANTLIB += c crypto curl ecore ecore_con ecore_file eet
 WANTLIB += eina glib-2.0 idn jpeg m pcre pthread ssl z
 
 MODULES =		devel/gettext
