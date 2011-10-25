@@ -5,7 +5,7 @@ COMMENT = 		simple pythonic remote deployment tool
 MODPY_EGG_VERSION = 	1.3.0
 DISTNAME = 		fabric-${MODPY_EGG_VERSION}
 PKGNAME = 		py-${DISTNAME}
-CATEGORIES = 		devel
+CATEGORIES = 		sysutils
 
 HOMEPAGE = 		http://fabfile.org/
 
@@ -23,7 +23,7 @@ MODULES = 	lang/python
 
 MODPY_SETUPTOOLS = Yes
 
-RUN_DEPENDS = 	security/py-paramiko
+RUN_DEPENDS = 	security/py-ssh
 NO_REGRESS =	Yes
 
 .include <bsd.port.mk>
