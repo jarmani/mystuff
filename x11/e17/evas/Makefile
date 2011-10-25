@@ -38,7 +38,6 @@ CONFIGURE_ARGS +=	--disable-doc \
 			--enable-line-dither-mask \
 			--enable-word-cache \
 			--enable-metric-cache \
-			--disable-gl-x11 \
 			--disable-cpu-sse3
 # ARGB Conversion from 32 to other pixel depths (slower -> faster)(nice -> ugly)
 #			--enable-small-dither-mask
