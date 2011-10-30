@@ -1,7 +1,8 @@
 # $OpenBSD: Makefile,v 1.29 2011/07/18 19:06:37 naddy Exp $
 
 COMMENT =		the enlightened window manager
-DISTNAME =		enlightenment-0.16.${VERSION}
+VERSION =		64524
+DISTNAME =		enlightenment-0.16.999.${VERSION}
 EPOCH =			1
 
 # BSD

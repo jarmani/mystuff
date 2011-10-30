@@ -342,6 +342,12 @@ lib/enlightenment/modules/msgbus/module.desktop
 lib/enlightenment/modules/msgbus/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/
 lib/enlightenment/modules/msgbus/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.a
 lib/enlightenment/modules/msgbus/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.la
+lib/enlightenment/modules/notification/
+lib/enlightenment/modules/notification/e-module-notification.edj
+lib/enlightenment/modules/notification/module.desktop
+lib/enlightenment/modules/notification/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/
+lib/enlightenment/modules/notification/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.a
+lib/enlightenment/modules/notification/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.la
 lib/enlightenment/modules/ofono/
 lib/enlightenment/modules/ofono/e-module-ofono.edj
 lib/enlightenment/modules/ofono/module.desktop
@@ -378,6 +384,12 @@ lib/enlightenment/modules/systray/module.desktop
 lib/enlightenment/modules/systray/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/
 lib/enlightenment/modules/systray/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.a
 lib/enlightenment/modules/systray/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.la
+lib/enlightenment/modules/tasks/
+lib/enlightenment/modules/tasks/e-module-tasks.edj
+lib/enlightenment/modules/tasks/module.desktop
+lib/enlightenment/modules/tasks/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/
+lib/enlightenment/modules/tasks/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.a
+lib/enlightenment/modules/tasks/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.la
 lib/enlightenment/modules/temperature/
 lib/enlightenment/modules/temperature/e-module-temperature.edj
 lib/enlightenment/modules/temperature/module.desktop
@@ -450,11 +462,10 @@ lib/enlightenment/preload/e_precache.a
 lib/enlightenment/preload/e_precache.la
 lib/enlightenment/utils/
 @bin lib/enlightenment/utils/enlightenment_alert
-@bin lib/enlightenment/utils/enlightenment_backlight
 @bin lib/enlightenment/utils/enlightenment_fm
 @bin lib/enlightenment/utils/enlightenment_fm_op
 @bin lib/enlightenment/utils/enlightenment_init
-@bin lib/enlightenment/utils/enlightenment_sys
+lib/enlightenment/utils/enlightenment_sys
 @bin lib/enlightenment/utils/enlightenment_thumb
 lib/pkgconfig/enlightenment.pc
 lib/pkgconfig/everything.pc

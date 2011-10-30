@@ -4,7 +4,7 @@ CATEGORIES ?=		x11
 
 HOMEPAGE ?=		http://www.enlightenment.org/
 
-MASTER_SITES ?=		http://kernelinvaders.com/tmp/ \
+MASTER_SITES ?=		http://kernelinvaders.com/e17/ \
 			http://download.enlightenment.org/releases/ \
 			http://download.enlightenment.org/snapshots/LATEST/ \
 			http://download.enlightenment.org/snapshots/2010-11-12/ \
@@ -17,11 +17,11 @@ DIST_SUBDIR ?=		e17
 
 CONFIGURE_STYLE ?=	gnu
 
-MAINTAINER ?=		Laurent FANIS <laurent@openbsd.org>
+MAINTAINER ?=		Jonathan Armani <armani@openbsd.org>
 
 NO_REGRESS ?=		Yes
 
-VERSION ?=		999.63923
+VERSION ?=		999.64526
 
 #FLAVOR ?=
 #.if ${FLAVOR:L:Mdebug}
