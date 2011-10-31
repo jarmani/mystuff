@@ -21,7 +21,7 @@ MAINTAINER ?=		Jonathan Armani <armani@openbsd.org>
 
 NO_REGRESS ?=		Yes
 
-VERSION ?=		999.64526
+VERSION ?=		999.64574
 
 #FLAVOR ?=
 #.if ${FLAVOR:L:Mdebug}
