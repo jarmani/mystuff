@@ -1,7 +1,7 @@
 $OpenBSD: patch-src_bin_Makefile_in,v 1.2 2011/01/16 01:00:11 laurent Exp $
---- src/bin/Makefile.in.orig	Sat Oct  8 21:50:04 2011
-+++ src/bin/Makefile.in	Sat Oct  8 21:56:14 2011
-@@ -895,7 +895,7 @@ enlightenment_alert_CFLAGS = @E_ALERT_CFLAGS@
+--- src/bin/Makefile.in.orig	Mon Oct 31 17:01:19 2011
++++ src/bin/Makefile.in	Tue Nov  1 20:37:54 2011
+@@ -920,7 +920,7 @@ enlightenment_alert_CFLAGS = @E_ALERT_CFLAGS@
  # HACK! why install-data-hook? install-exec-hook is run after bin_PROGRAMS
  # and before internal_bin_PROGRAMS are installed. install-data-hook is
  # run after both

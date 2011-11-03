@@ -2,9 +2,9 @@ $OpenBSD: patch-src_lib_dbus_e_dbus_c,v 1.2 2011/01/16 00:45:56 laurent Exp $
 
 dbus_message_get_path() could return NULL.
 
---- src/lib/dbus/e_dbus.c.orig	Mon Aug 23 16:28:31 2010
-+++ src/lib/dbus/e_dbus.c	Mon Aug 23 16:34:19 2010
-@@ -371,12 +371,19 @@ static DBusHandlerResult
+--- src/lib/dbus/e_dbus.c.orig	Sun Oct 16 18:40:52 2011
++++ src/lib/dbus/e_dbus.c	Tue Nov  1 20:36:10 2011
+@@ -377,12 +377,19 @@ static DBusHandlerResult
  e_dbus_filter(DBusConnection *conn __UNUSED__, DBusMessage *message, void *user_data)
  {
    E_DBus_Connection *cd = user_data;

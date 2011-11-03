@@ -1,10 +1,10 @@
 # $OpenBSD: Makefile,v 1.20 2011/03/15 19:41:31 jasper Exp $
 
-COMMENT =		canvas API for X
+COMMENT =		EFL canvas API for X
 DISTNAME =		evas-1.0.${VERSION}
 EPOCH =			3
 
-SHARED_LIBS +=  evas                 1.0      # 1.0
+SHARED_LIBS +=		evas 1.0
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -14,11 +14,12 @@ PERMIT_DISTFILES_FTP =	Yes
 
 USE_LIBTOOL =		Yes
 
-WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm cairo croco-0.6 
-WANTLIB += crypto drm eet eina expat ffi fontconfig freetype gdk_pixbuf-2.0 gif 
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 jpeg m 
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png 
-WANTLIB += pthread-stubs rsvg-2 stdc++ ssl tiff xcb xcb-render xcb-shm xml2 z
+WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm cairo croco-0.6
+WANTLIB += crypto drm eet eina expat ffi fontconfig freetype fribidi
+WANTLIB += gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread-stubs rsvg-2 ssl tiff xcb xcb-aux xcb-image
+WANTLIB += xcb-render xcb-shm xml2 z
 
 MODULES=		devel/gettext
 
@@ -29,47 +30,24 @@ LIB_DEPENDS =		x11/e17/eet>=1.4.999 \
 			graphics/jpeg \
 			graphics/libungif \
 			print/freetype \
-			devel/fribidi \
+			devel/fribidi>=0.19.2 \
 			x11/gnome/librsvg
 
+# use XCB
 CONFIGURE_ARGS +=	--disable-doc \
-			--enable-no-dither-mask \
-			--enable-small-dither-mask \
-			--enable-line-dither-mask \
-			--enable-word-cache \
-			--enable-metric-cache \
-			--disable-cpu-sse3
-# ARGB Conversion from 32 to other pixel depths (slower -> faster)(nice -> ugly)
-#			--enable-small-dither-mask
-#			--enable-line-dither-mask
-#			--enable-no-dither-mask
-# Experimental performance
-#	Enable experimental word caching to speed up rendering [[default=disabled]]
-#			--enable-word-cache
-#	Enable experimental metric caching to speed up rendering [[default=disabled]]
-#			--enable-metric-cache
-# performance
-#			--disable-evas-magic-debug
-# performance multi CPU / rthread needed (attach thread to CPU, pipe rendering)
-#			--enable-pipe-render
-#			--enable-async-render
-# performance / cahing, activate by user, need shm_open() ! (fix with shm_get() ?)
-#			--enable-evas-cserve
-# engine modules : for performance, static ?
-#	software
-#			--enable-software-xlib: libx11 (http://xorg.freedesktop.org/)
-#			--enable-software-xcb: libxcb (http://xorg.freedesktop.org/)
-#			--enable-software-8-x11
-#			--enable-software-16-x11: libxrender (http://xorg.freedesktop.org/)
-#	xrender x11 : libxrender (http://xorg.freedesktop.org/)
-#			--enable-xrender-x11
-#			--enable-xrender-xcb
-#	gl x11 engine : libxrender (http://xorg.freedesktop.org/)
-#			--enable-gl-x11
-#	gl engine flavor (active gles + choose one of variety)
-#			--enable-gl-flavor-gles
-#			--enable-gles-variety-sgx (Most GL-ES2 GPUs with shader compiler)
-#			--enable-gles-variety-s3c6410 (s3c6410 with offline shader compiler)
+			--enable-gl-xcb \
+			--enable-software-xcb
+
+#			--enable-word-cache \
+#			--enable-metric-cache \
+
+.ifndef DEBUG
+CONFIGURE_ARGS +=	--disable-evas-magic-debug
+.endif
+
+# work in progress ...
+#src/lib/include/evas_blend_ops.h:12:25: error: immintrin.h: No such file or directory
+CONFIGURE_ARGS +=	--disable-cpu-sse3
 
 CONFIGURE_ENV +=	CXXFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \

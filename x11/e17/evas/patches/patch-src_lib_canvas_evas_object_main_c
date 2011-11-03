@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Color are unsigned char, no need to use int *.
+Fix a warning in Edje.
+
+--- src/lib/canvas/evas_object_main.c.orig	Tue Nov  1 18:18:04 2011
++++ src/lib/canvas/evas_object_main.c	Tue Nov  1 18:18:31 2011
+@@ -1014,7 +1014,8 @@ evas_object_color_set(Evas_Object *obj, int r, int g, 
+ }
+ 
+ EAPI void
+-evas_object_color_get(const Evas_Object *obj, int *r, int *g, int *b, int *a)
++evas_object_color_get(const Evas_Object *obj, unsigned char *r,
++                      unsigned char *g, unsigned char *b, unsigned char *a)
+ {
+    MAGIC_CHECK(obj, Evas_Object, MAGIC_OBJ);
+    if (r) *r = 0; if (g) *g = 0; if (b) *b = 0; if (a) *a = 0;

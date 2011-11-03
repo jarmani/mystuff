@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.9 2011/03/15 19:39:28 jasper Exp $
 
-COMMENT =		enlightenment DBus component
+COMMENT =		EFL DBus component
 DISTNAME =		e_dbus-1.0.${VERSION}
 EPOCH =			2
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 USE_LIBTOOL =		Yes
 
-WANTLIB += c crypto dbus-1 ecore eet eina evas expat fontconfig
-WANTLIB += freetype glib-2.0 jpeg m pcre pthread ssl z
+WANTLIB += c crypto dbus-1 ecore eet eina evas expat fontconfig freetype
+WANTLIB += fribidi glib-2.0 jpeg m pcre pthread ssl z
 
 MODULES =		devel/gettext
 

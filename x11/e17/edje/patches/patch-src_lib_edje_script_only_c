@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Use unsigned char for color instead of int
+
+--- src/lib/edje_script_only.c.orig	Wed Nov  2 08:37:54 2011
++++ src/lib/edje_script_only.c	Wed Nov  2 08:38:06 2011
+@@ -382,7 +382,7 @@ _exp_e_obj_color_get(Embryo_Program * ep, Embryo_Cell 
+ 
+    Oid *oid;
+ 
+-   int r, g, b, a;
++   unsigned char r, g, b, a;
+ 
+    SI_RETURN(-1);
+ 

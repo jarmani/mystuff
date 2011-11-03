@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.17 2011/03/15 19:41:00 jasper Exp $
 
-COMMENT =		implementations of freedesktop.org specifications
+COMMENT =		EFL implementations of freedesktop.org specifications
 DISTNAME =		efreet-1.0.${VERSION}
 EPOCH =			3
 
@@ -17,8 +17,10 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += c crypto curl ecore ecore_con ecore_file eet
-WANTLIB += eina glib-2.0 idn jpeg m pcre pthread ssl z
+WANTLIB += c crypto curl ecore ecore_con ecore_file eet eina glib-2.0 idn
+WANTLIB += jpeg m pcre pthread ssl z
+
+#WANTLIB += cares
 
 MODULES =		devel/gettext
 

@@ -1,0 +1,32 @@
+$OpenBSD$
+
+Use unsigned char instead of int for evas_object_color_get()
+
+--- src/bin/e_pan.c.orig	Wed Nov  2 12:19:26 2011
++++ src/bin/e_pan.c	Wed Nov  2 12:19:37 2011
+@@ -54,20 +54,20 @@ e_pan_child_set(Evas_Object *obj, Evas_Object *child)
+      }
+    if (child)
+      {
+-	int r, g, b, a;
++	unsigned char r, g, b, a;
+ 
+ 	sd->child_obj = child;
+ 	evas_object_smart_member_add(sd->child_obj, sd->smart_obj);
+-	evas_object_geometry_get(sd->child_obj, NULL, NULL, 
++	evas_object_geometry_get(sd->child_obj, NULL, NULL,
+                                  &sd->child_w, &sd->child_h);
+-	evas_object_event_callback_add(child, EVAS_CALLBACK_FREE, 
++	evas_object_event_callback_add(child, EVAS_CALLBACK_FREE,
+                                        _e_smart_child_del_hook, sd);
+-	evas_object_event_callback_add(child, EVAS_CALLBACK_RESIZE, 
++	evas_object_event_callback_add(child, EVAS_CALLBACK_RESIZE,
+                                        _e_smart_child_resize_hook, sd);
+ 	evas_object_color_get(sd->smart_obj, &r, &g, &b, &a);
+ 	evas_object_color_set(sd->child_obj, r, g, b, a);
+ 	evas_object_clip_set(sd->child_obj, evas_object_clip_get(sd->smart_obj));
+-	if (evas_object_visible_get(sd->smart_obj)) 
++	if (evas_object_visible_get(sd->smart_obj))
+           evas_object_show(sd->child_obj);
+ 	else evas_object_hide(sd->child_obj);
+ 	_e_smart_reconfigure(sd);

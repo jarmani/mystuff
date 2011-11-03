@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.10 2011/03/15 19:41:17 jasper Exp $
 
-COMMENT =		C like scripting language used in E17
+COMMENT =		EFL C like scripting language
 DISTNAME =		embryo-1.0.${VERSION}
 EPOCH =			3
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		converters/libiconv
 LIB_DEPENDS =		x11/e17/eina>=1.0.999
 
-WANTLIB += c eina m pthread 
+WANTLIB += c eina m pthread
 
 USE_LIBTOOL =		Yes
 

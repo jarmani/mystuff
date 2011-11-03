@@ -2,9 +2,9 @@ $OpenBSD: patch-configure,v 1.5 2011/03/15 19:40:40 jasper Exp $
 
 -Wl,--as-needed fucks with -pthread.
 
---- configure.orig	Tue Mar  8 18:09:51 2011
-+++ configure	Tue Mar  8 18:09:54 2011
-@@ -13996,7 +13996,7 @@ esac
+--- configure.orig	Sat Oct  8 19:26:28 2011
++++ configure	Wed Oct 26 01:45:13 2011
+@@ -15864,7 +15864,7 @@ esac
  
  
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-configure,v 1.5 2011/03/15 19:40:40 jasper Exp $
  CFLAGS_save="${CFLAGS}"
  CFLAGS="${CFLAGS} -Wl,--as-needed"
  
-@@ -14038,7 +14038,7 @@ ac_cpp='$CPP $CPPFLAGS'
+@@ -15906,7 +15906,7 @@ ac_cpp='$CPP $CPPFLAGS'
  ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
  ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_c_compiler_gnu

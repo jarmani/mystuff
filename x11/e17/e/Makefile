@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.29 2011/07/18 19:06:37 naddy Exp $
 
-COMMENT =		the enlightened window manager
+COMMENT =		EFL enlightened window manager
 DISTNAME =		enlightenment-0.16.${VERSION}
 EPOCH =			1
 
@@ -13,11 +13,11 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES +=		devel/gettext \
 			lang/lua
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr 
-WANTLIB += Xrender Xss Xtst c crypto curl dbus-1 ebluez econnman ecore 
-WANTLIB += ecore_con ecore_evas ecore_file ecore_imf ecore_imf_evas ecore_input 
-WANTLIB += ecore_input_evas ecore_ipc ecore_x edbus edje eet efreet efreet_mime 
-WANTLIB += efreet_trash ehal eina embryo eofono evas execinfo expat fontconfig 
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender Xss Xtst c crypto curl dbus-1 ebluez econnman ecore
+WANTLIB += ecore_con ecore_evas ecore_file ecore_imf ecore_imf_evas ecore_input
+WANTLIB += ecore_input_evas ecore_ipc ecore_x edbus edje eet efreet efreet_mime
+WANTLIB += efreet_trash ehal eina embryo eofono evas execinfo expat fontconfig
 WANTLIB += freetype glib-2.0 idn jpeg lua m pcre pthread ssl xcb xcb-shape z
 
 LIB_DEPENDS =		x11/e17/edje>=1.0 \
@@ -103,6 +103,6 @@ SUBST_VARS +=		FULLARCH OSREV
 
 post-install:
 	${INSTALL_PROGRAM} ${FILESDIR}/enlightenment_sys \
-		${PREFIX}/lib/enlightenment/utils/ 
+		${PREFIX}/lib/enlightenment/utils/
 
 .include <bsd.port.mk>

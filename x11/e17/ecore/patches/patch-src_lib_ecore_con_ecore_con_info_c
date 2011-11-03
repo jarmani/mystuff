@@ -1,0 +1,27 @@
+$OpenBSD$
+
+Fix inet.h:74: warning: 'struct in_addr' declared inside parameter list
+
+--- src/lib/ecore_con/ecore_con_info.c.orig	Wed Nov  2 07:58:05 2011
++++ src/lib/ecore_con/ecore_con_info.c	Wed Nov  2 08:33:15 2011
+@@ -34,16 +34,16 @@ void *alloca(size_t);
+ # include <sys/types.h>
+ #endif
+ 
++#ifdef HAVE_NETINET_IN_H
++# include <netinet/in.h>
++#endif
++
+ #ifdef HAVE_ARPA_INET_H
+ # include <arpa/inet.h>
+ #endif
+ 
+ #ifdef HAVE_ARPA_NAMESER_H
+ # include <arpa/nameser.h>
+-#endif
+-
+-#ifdef HAVE_NETINET_IN_H
+-# include <netinet/in.h>
+ #endif
+ 
+ #ifdef HAVE_SYS_SOCKET_H

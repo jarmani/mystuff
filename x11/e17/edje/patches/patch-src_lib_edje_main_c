@@ -1,7 +1,10 @@
 $OpenBSD: patch-src_lib_edje_main_c,v 1.1 2011/01/16 00:48:45 laurent Exp $
---- src/lib/edje_main.c.orig	Sun Dec  5 19:34:35 2010
-+++ src/lib/edje_main.c	Sun Dec  5 19:37:05 2010
-@@ -44,6 +44,7 @@ Eina_Mempool *_edje_real_part_state_mp = NULL;
+
+Fix segfault when using DEFAULT_MEMPOOL
+
+--- src/lib/edje_main.c.orig	Sun Oct 16 18:42:05 2011
++++ src/lib/edje_main.c	Tue Nov  1 20:33:55 2011
+@@ -16,6 +16,7 @@ Eina_Mempool *_edje_real_part_state_mp = NULL;
  EAPI int
  edje_init(void)
  {
@@ -9,7 +12,7 @@ $OpenBSD: patch-src_lib_edje_main_c,v 1.1 2011/01/16 00:48:45 laurent Exp $
     if (++_edje_init_count != 1)
       return _edje_init_count;
  
-@@ -90,7 +91,16 @@ edje_init(void)
+@@ -62,7 +63,16 @@ edje_init(void)
     _edje_module_init();
     _edje_message_init();
  
@@ -27,7 +30,7 @@ $OpenBSD: patch-src_lib_edje_main_c,v 1.1 2011/01/16 00:48:45 laurent Exp $
  					 "Edje_Real_Part", NULL,
  					 sizeof (Edje_Real_Part), 128);
     if (!_edje_real_part_mp)
-@@ -99,7 +109,7 @@ edje_init(void)
+@@ -71,7 +81,7 @@ edje_init(void)
  	goto shutdown_eet;
       }
  

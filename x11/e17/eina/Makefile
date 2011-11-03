@@ -4,7 +4,7 @@ COMMENT =		EFL API for data types
 DISTNAME =		eina-1.0.${VERSION}
 EPOCH =			2
 
-SHARED_LIBS +=  eina                 1.0      # 1.0
+SHARED_LIBS +=		eina 1.0
 
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -12,30 +12,28 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += 		m
+WANTLIB += m
 
 MODULES =		converters/libiconv
 
 USE_LIBTOOL =		Yes
 
-CONFIGURE_ARGS =	--disable-doc
-# mempool
-#			--enable-default-mempool
-#			--enable-mempool-chained-pool
-#			--enable-mempool-ememoa-fixed
-#			--enable-mempool-ememoa-unknown
-#			--enable-mempool-fixed-bitmap
-#			--enable-mempool-pass-through
-#			--enable-mempool-buddy
-#			--enable-mempool-one-big
-# perf ?
-#			--enable-amalgamation
-#			--with-internal-maximum-log-level=2
-#			--disable-magic-debug
-#			--disable-safety-checks
-#			--disable-assert
+# use obsd malloc only (already a pool allocator, random and quite as fast)
+CONFIGURE_ARGS +=	--disable-doc \
+			--enable-amalgamation \
+			--enable-default-mempool
 
-CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" 
+.ifdef DEBUG
+CONFIGURE_ARGS +=	--enable-stringshare-usage
+.else
+CONFIGURE_ARGS +=	--with-internal-maximum-log-level=2 \
+			--disable-debug-threads \
+			--disable-magic-debug \
+			--disable-safety-checks \
+			--disable-assert
+.endif
+
+CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -Wextra" \
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

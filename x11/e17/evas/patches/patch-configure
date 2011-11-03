@@ -1,7 +1,7 @@
 $OpenBSD$
---- configure.orig	Sun Oct 30 19:51:32 2011
-+++ configure	Sun Oct 30 19:51:50 2011
-@@ -21685,13 +21685,13 @@ fi
+--- configure.orig	Mon Oct 31 17:07:59 2011
++++ configure	Tue Nov  1 18:11:46 2011
+@@ -21689,13 +21689,13 @@ fi
  
  gl_pt_lib="";
  have_gl_pt="no"
@@ -18,7 +18,7 @@ $OpenBSD$
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -21728,7 +21728,7 @@ else
+@@ -21732,7 +21732,7 @@ else
  fi
  
  if test "x$have_gl_pt" = "xyes" ; then
@@ -27,7 +27,7 @@ $OpenBSD$
  fi
  
  ac_fn_c_check_header_compile "$LINENO" "GL/gl.h" "ac_cv_header_GL_gl_h" "
-@@ -25716,13 +25716,13 @@ fi
+@@ -25720,13 +25720,13 @@ fi
  
  gl_pt_lib="";
  have_gl_pt="no"
@@ -44,7 +44,7 @@ $OpenBSD$
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -25759,7 +25759,7 @@ else
+@@ -25763,7 +25763,7 @@ else
  fi
  
  if test "x$have_gl_pt" = "xyes" ; then
@@ -53,7 +53,7 @@ $OpenBSD$
  fi
  
  if test "x${have_dep}" = "xyes" ; then
-@@ -27047,13 +27047,13 @@ fi
+@@ -27051,13 +27051,13 @@ fi
  
  gl_pt_lib="";
  have_gl_pt="no"
@@ -70,7 +70,7 @@ $OpenBSD$
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -27090,7 +27090,7 @@ else
+@@ -27094,7 +27094,7 @@ else
  fi
  
  if test "x$have_gl_pt" = "xyes" ; then
@@ -79,7 +79,7 @@ $OpenBSD$
  fi
  
  if test "x${have_dep}" = "xyes" ; then
-@@ -30405,13 +30405,13 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
+@@ -30409,13 +30409,13 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
  #define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
  
@@ -96,7 +96,7 @@ $OpenBSD$
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -30443,13 +30443,13 @@ fi
+@@ -30447,13 +30447,13 @@ fi
  $as_echo "$ac_cv_lib_pthread_pthread_attr_setaffinity_np" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_attr_setaffinity_np" = x""yes; then :
  
@@ -113,7 +113,7 @@ $OpenBSD$
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -30758,7 +30758,7 @@ if test "x$need_pthreads" = "xyes"; then
+@@ -30762,7 +30762,7 @@ if test "x$need_pthreads" = "xyes"; then
    { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  $as_echo "yes" >&6; }
    pthread_cflags=""

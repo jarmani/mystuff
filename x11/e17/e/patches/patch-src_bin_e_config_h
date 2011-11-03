@@ -1,0 +1,94 @@
+$OpenBSD$
+
+Fix warning: comparison is always false due to limited range of data type
+Note: unsigned < 0 always false, so use signed
+
+--- src/bin/e_config.h.orig	Sun Oct 30 17:00:42 2011
++++ src/bin/e_config.h	Wed Nov  2 12:54:01 2011
+@@ -213,17 +213,17 @@ struct _E_Config
+    double      desklock_autolock_idle_timeout; // GUI
+    int         desklock_use_custom_desklock; // GUI
+    const char *desklock_custom_desklock_cmd; // GUI
+-   unsigned char desklock_ask_presentation; // GUI
+-   double        desklock_ask_presentation_timeout; // GUI
++   char        desklock_ask_presentation; // GUI
++   double      desklock_ask_presentation_timeout; // GUI
+ 
+    int         screensaver_enable; // GUI
+    int         screensaver_timeout; // GUI
+    int         screensaver_interval; // GUI
+    int         screensaver_blanking; // GUI
+    int         screensaver_expose; // GUI
+-   unsigned char screensaver_ask_presentation; // GUI
+-   double        screensaver_ask_presentation_timeout; // GUI
+-   
++   char        screensaver_ask_presentation; // GUI
++   double      screensaver_ask_presentation_timeout; // GUI
++
+    unsigned char screensaver_suspend;
+    unsigned char screensaver_suspend_on_ac;
+    double        screensaver_suspend_delay;
+@@ -257,12 +257,12 @@ struct _E_Config
+    int         desk_flip_wrap; // GUI
+    int         fullscreen_flip; // GUI
+ 
+-   const char    *icon_theme; // GUI
+-   unsigned char  icon_theme_overrides; // GUI
++   const char *icon_theme; // GUI
++   char        icon_theme_overrides; // GUI
+ 
+-   int           desk_flip_animate_mode; // GUI
+-   int           desk_flip_animate_interpolation; // GUI
+-   double        desk_flip_animate_time; // GUI
++   int         desk_flip_animate_mode; // GUI
++   int         desk_flip_animate_interpolation; // GUI
++   double      desk_flip_animate_time; // GUI
+ 
+    const char *wallpaper_import_last_dev; // INTERNAL
+    const char *wallpaper_import_last_path; // INTERNAL
+@@ -314,7 +314,7 @@ struct _E_Config
+       unsigned char use_custom; // GUI
+    } scale;
+ 
+-   unsigned char show_cursor; // GUI
++   char show_cursor; // GUI
+    unsigned char idle_cursor; // GUI
+ 
+    const char *default_system_menu;
+@@ -331,26 +331,26 @@ struct _E_Config
+    } syscon;
+ 
+    struct {
+-      unsigned char presentation;
+-      unsigned char offline;
++      char presentation;
++      char offline;
+    } mode;
+ 
+    struct {
+-      double        expire_timeout;
+-      unsigned char show_run_dialog;
+-      unsigned char show_exit_dialog;
++      double expire_timeout;
++      char   show_run_dialog;
++      char   show_exit_dialog;
+    } exec;
+-   
+-   unsigned char null_container_win;
+-   
++
++   char null_container_win;
++
+    Eina_List *env_vars;
+-   
++
+    struct {
+       double normal;
+       double dim;
+       double transition;
+    } backlight;
+-   
++
+    struct {
+       unsigned char load_xrdb;
+       unsigned char load_xmodmap;

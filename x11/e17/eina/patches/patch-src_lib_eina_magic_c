@@ -1,0 +1,56 @@
+$OpenBSD$
+
+Avoid casting unsigned int into pointer.
+Remove useless find_cmp after modification.
+Update find_cmp and sort_cmp into one single cmp.
+
+--- src/lib/eina_magic.c.orig	Sat Oct  8 18:50:59 2011
++++ src/lib/eina_magic.c	Tue Oct 25 20:40:04 2011
+@@ -70,20 +70,12 @@ static size_t _eina_magic_strings_allocated = 0;
+ static Eina_Bool _eina_magic_strings_dirty = 0;
+ 
+ static int
+-_eina_magic_strings_sort_cmp(const void *p1, const void *p2)
++_eina_magic_strings_cmp(const void *p1, const void *p2)
+ {
+    const Eina_Magic_String *a = p1, *b = p2;
+    return a->magic - b->magic;
+ }
+ 
+-static int
+-_eina_magic_strings_find_cmp(const void *p1, const void *p2)
+-{
+-   Eina_Magic a = (Eina_Magic)p1;
+-   const Eina_Magic_String *b = p2;
+-   return a - b->magic;
+-}
+-
+ static Eina_Magic_String *
+ _eina_magic_strings_alloc(void)
+ {
+@@ -194,6 +186,7 @@ eina_magic_string_shutdown(void)
+ EAPI const char *
+ eina_magic_string_get(Eina_Magic magic)
+ {
++   Eina_Magic_String lookup;
+    Eina_Magic_String *ems;
+ 
+    if (!_eina_magic_strings)
+@@ -202,13 +195,14 @@ eina_magic_string_get(Eina_Magic magic)
+    if (_eina_magic_strings_dirty)
+      {
+         qsort(_eina_magic_strings, _eina_magic_strings_count,
+-              sizeof(Eina_Magic_String), _eina_magic_strings_sort_cmp);
++              sizeof(Eina_Magic_String), _eina_magic_strings_cmp);
+         _eina_magic_strings_dirty = 0;
+      }
+ 
+-   ems = bsearch((void *)magic, _eina_magic_strings,
++   lookup.magic = magic;
++   ems = bsearch(&lookup, _eina_magic_strings,
+                  _eina_magic_strings_count, sizeof(Eina_Magic_String),
+-                 _eina_magic_strings_find_cmp);
++                 _eina_magic_strings_cmp);
+    if (ems)
+       return ems->string ? ems->string : "(undefined)";
+ 

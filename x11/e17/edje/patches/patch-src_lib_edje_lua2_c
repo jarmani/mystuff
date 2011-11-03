@@ -1,0 +1,90 @@
+$OpenBSD$
+
+Use unsigned char for color_get instead of int
+
+--- src/lib/edje_lua2.c.orig	Sun Oct 16 18:42:07 2011
++++ src/lib/edje_lua2.c	Wed Nov  2 18:46:00 2011
+@@ -1318,6 +1318,60 @@ _elua_4_int_get(lua_State *L, int i, Eina_Bool tr,
+    return n;
+ }
+ 
++static int
++_elua_4_uchar_get(lua_State *L, int i, Eina_Bool tr,
++                const char *n1, unsigned char *v1,
++                const char *n2, unsigned char *v2,
++                const char *n3, unsigned char *v3,
++                const char *n4, unsigned char *v4
++               )
++{
++   int n = 0;
++
++   if (lua_istable(L, i))
++     {
++        lua_getfield(L, i, n1);
++        if (lua_isnil(L, -1))
++          {
++             lua_pop(L, 1);
++             lua_rawgeti(L, i, 1);
++             lua_rawgeti(L, i, 2);
++             lua_rawgeti(L, i, 3);
++             lua_rawgeti(L, i, 4);
++          }
++        else
++          {
++             lua_getfield(L, i, n2);
++             lua_getfield(L, i, n3);
++             lua_getfield(L, i, n4);
++          }
++        if ((!lua_isnil(L, -1)) && (!lua_isnil(L, -2)) &&
++            (!lua_isnil(L, -3)) && (!lua_isnil(L, -4)))
++          {
++             *v1 = (unsigned char)lua_tointeger(L, -4);
++             *v2 = (unsigned char)lua_tointeger(L, -3);
++             *v3 = (unsigned char)lua_tointeger(L, -2);
++             *v4 = (unsigned char)lua_tointeger(L, -1);
++             n = 1;
++          }
++        if (tr) lua_settop(L, i);
++     }
++   else
++     {
++        if ((lua_isnumber(L, i + 0)) && (lua_isnumber(L, i + 1)) &&
++            (lua_isnumber(L, i + 2)) && (lua_isnumber(L, i + 3)))
++          {
++             *v1 = (unsigned char)lua_tointeger(L, i + 0);
++             *v2 = (unsigned char)lua_tointeger(L, i + 1);
++             *v3 = (unsigned char)lua_tointeger(L, i + 2);
++             *v4 = (unsigned char)lua_tointeger(L, i + 3);
++             n = 4;
++          }
++        if (tr) lua_newtable(L);
++     }
++   return n;
++}
++
+ static void
+ _elua_int_ret(lua_State *L, const char *n, int v)
+ {
+@@ -1327,7 +1381,7 @@ _elua_int_ret(lua_State *L, const char *n, int v)
+ }
+ 
+ static void
+-_elua_color_fix(int *r, int *g, int *b, int *a)
++_elua_color_fix(unsigned char *r, unsigned char *g, unsigned char *b, unsigned char *a)
+ {
+    if (*r > *a) *r = *a;
+    if (*g > *a) *g = *a;
+@@ -1579,11 +1633,11 @@ _elua_color(lua_State *L)
+ {
+    Edje_Lua_Obj *obj = (Edje_Lua_Obj *)lua_touserdata(L, 1);
+    Edje_Lua_Evas_Object *elo = (Edje_Lua_Evas_Object *)obj;
+-   int r, g, b, a;
++   unsigned char r, g, b, a;
+ 
+    if (!obj) return 0;
+    if (!obj->is_evas_obj) return 0;
+-   if (_elua_4_int_get(L, 2, EINA_TRUE, "r", &r, "g", &g, "b", &b, "a", &a) > 0)
++   if (_elua_4_uchar_get(L, 2, EINA_TRUE, "r", &r, "g", &g, "b", &b, "a", &a) > 0)
+      {
+         _elua_color_fix(&r, &g, &b, &a);
+         evas_object_color_set(elo->evas_obj, r, g, b, a);

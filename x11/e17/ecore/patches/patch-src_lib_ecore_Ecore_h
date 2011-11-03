@@ -1,7 +1,7 @@
 $OpenBSD: patch-src_lib_ecore_Ecore_h,v 1.2 2011/01/16 00:40:32 laurent Exp $
---- src/lib/ecore/Ecore.h.orig	Fri Nov 12 15:23:02 2010
-+++ src/lib/ecore/Ecore.h	Thu Nov 18 00:14:01 2010
-@@ -41,6 +41,7 @@
+--- src/lib/ecore/Ecore.h.orig	Sun Oct 30 17:01:26 2011
++++ src/lib/ecore/Ecore.h	Tue Nov  1 16:14:39 2011
+@@ -301,6 +301,7 @@
  #else
  # include <sys/time.h>
  # include <signal.h>

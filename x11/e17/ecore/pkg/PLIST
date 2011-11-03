@@ -15,9 +15,6 @@ include/ecore-1/Ecore_Ipc.h
 include/ecore-1/Ecore_X.h
 include/ecore-1/Ecore_X_Atoms.h
 include/ecore-1/Ecore_X_Cursor.h
-lib/ecore/
-lib/ecore/immodules/
-lib/ecore/immodules/xim.la
 lib/libecore.a
 lib/libecore.la
 lib/libecore_con.a
