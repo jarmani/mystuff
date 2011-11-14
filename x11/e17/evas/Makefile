@@ -23,7 +23,7 @@ WANTLIB += xcb-render xcb-shm xml2 z
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS =		x11/e17/eet>=1.4.999 \
+LIB_DEPENDS =		x11/e17/eet>=1.4 \
 			graphics/libungif \
 			graphics/png \
 			graphics/tiff \
@@ -34,7 +34,7 @@ LIB_DEPENDS =		x11/e17/eet>=1.4.999 \
 			x11/gnome/librsvg
 
 # use XCB
-CONFIGURE_ARGS +=	--disable-doc \
+CONFIGURE_ARGS =	--disable-doc \
 			--enable-gl-xcb \
 			--enable-software-xcb
 
@@ -49,9 +49,7 @@ CONFIGURE_ARGS +=	--disable-evas-magic-debug
 #src/lib/include/evas_blend_ops.h:12:25: error: immintrin.h: No such file or directory
 CONFIGURE_ARGS +=	--disable-cpu-sse3
 
-CONFIGURE_ENV +=	CXXFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-			CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-			CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include -Wall -Wextra" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}

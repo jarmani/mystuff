@@ -31,10 +31,10 @@ USE_LIBTOOL =		Yes
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		misc/shared-mime-info>=0.21
 
-LIB_DEPENDS +=		x11/e17/ecore>=1.0 \
+LIB_DEPENDS =		x11/e17/ecore>=1.0 \
 			x11/e17/embryo>=1.0
 
-CONFIGURE_ARGS +=	--disable-doc \
+CONFIGURE_ARGS =	--disable-doc \
 			--enable-amalgamation
 
 # perf ?
@@ -42,5 +42,7 @@ CONFIGURE_ARGS +=	--disable-doc \
 #	--enable-edje-calc-cache
 #    don't use floating point, for architectures without FPU
 #	--enable-fixed-point
+
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -Wall -Wextra"
 
 .include <bsd.port.mk>

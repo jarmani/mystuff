@@ -13,12 +13,14 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		converters/libiconv
-LIB_DEPENDS =		x11/e17/eina>=1.0.999
+LIB_DEPENDS =		x11/e17/eina>=1.0
 
 WANTLIB += c eina m pthread
 
 USE_LIBTOOL =		Yes
 
 CONFIGURE_ARGS =	--disable-doc
+
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -Wall -Wextra"
 
 .include <bsd.port.mk>

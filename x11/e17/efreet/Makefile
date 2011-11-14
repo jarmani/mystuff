@@ -34,4 +34,6 @@ CONFIGURE_ARGS =	--disable-doc
 # disable sloppy specification compliance
 #			--disable-sloppy-spec
 
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -Wall -Wextra"
+
 .include <bsd.port.mk>

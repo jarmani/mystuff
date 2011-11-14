@@ -19,7 +19,7 @@ MODULES =		converters/libiconv
 USE_LIBTOOL =		Yes
 
 # use obsd malloc only (already a pool allocator, random and quite as fast)
-CONFIGURE_ARGS +=	--disable-doc \
+CONFIGURE_ARGS =	--disable-doc \
 			--enable-amalgamation \
 			--enable-default-mempool
 
@@ -33,7 +33,7 @@ CONFIGURE_ARGS +=	--with-internal-maximum-log-level=2 \
 			--disable-assert
 .endif
 
-CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -Wextra" \
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

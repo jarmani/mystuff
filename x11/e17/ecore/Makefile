@@ -34,28 +34,28 @@ WANTLIB += xcb-xtest z
 
 LIB_DEPENDS =		devel/glib2 \
 			net/curl \
-			x11/e17/evas>=1.0.999 \
+			x11/e17/evas>=1.0 \
 			devel/fribidi>=0.19.2
 #			net/libcares \
 
-CONFIGURE_ARGS +=	--disable-doc \
-			--disable-gnutls
+CONFIGURE_ARGS =	--disable-doc \
+			--disable-gnutls \
+			--enable-ecore-x-xcb
 #			--enable-cares
-
-.ifndef DEBUG
-CONFIGURE_ARGS +=	--with-internal-maximum-log-level=2 \
-			--disable-debug-threads \
-			--disable-ecore-timer-dump
-.endif
 
 # use eina_lock_take instead of EINA_MAIN_LOOP_CHECK_RETURN
 # ecore is not thread safe ... not ?
 #CONFIGURE_ARGS +=	--enable-thread-safety
 
-# use XCB like Evas
-CONFIGURE_ARGS +=	--enable-ecore-x-xcb
-
-CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+.ifdef DEBUG
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
+.else
+CONFIGURE_ARGS +=	--with-internal-maximum-log-level=2 \
+			--disable-debug-threads \
+			--disable-ecore-timer-dump
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib "
+.endif
 
 .include <bsd.port.mk>

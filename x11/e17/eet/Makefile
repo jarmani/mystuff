@@ -16,12 +16,12 @@ WANTLIB += c crypto eina jpeg m pthread ssl z
 
 MODULES =		converters/libiconv
 
-LIB_DEPENDS =		x11/e17/eina>=1.0.999 \
+LIB_DEPENDS =		x11/e17/eina>=1.0 \
 			graphics/jpeg
 
 USE_LIBTOOL =		Yes
 
-CONFIGURE_ARGS +=	--disable-doc \
+CONFIGURE_ARGS =	--disable-doc \
 			--disable-gnutls \
 			--enable-amalgamation
 
@@ -29,7 +29,7 @@ CONFIGURE_ARGS +=	--disable-doc \
 CONFIGURE_ARGS +=	--disable-assert
 .endif
 
-CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -Wall -Wextra" \
 			LDFLAGS="${LDFLAGS} -I${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
