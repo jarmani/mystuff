@@ -2,9 +2,10 @@ $OpenBSD$
 
 Fix warning: initialization from incompatible pointer type
 Due to E_Gadcon_Client_Class change
+Fix warning: comparison between signed and unsigned
 
 --- src/modules/backlight/e_mod_main.c.orig	Sun Oct 16 18:31:29 2011
-+++ src/modules/backlight/e_mod_main.c	Wed Nov  2 21:31:46 2011
++++ src/modules/backlight/e_mod_main.c	Wed Nov  9 07:28:37 2011
 @@ -5,7 +5,7 @@
  static E_Gadcon_Client *_gc_init(E_Gadcon *gc, const char *name, const char *id, const char *style);
  static void _gc_shutdown(E_Gadcon_Client *gcc);
@@ -14,6 +15,18 @@ Due to E_Gadcon_Client_Class change
  static Evas_Object *_gc_icon(E_Gadcon_Client_Class *client_class, Evas *evas);
  static const char *_gc_id_new(E_Gadcon_Client_Class *client_class);
  
+@@ -161,9 +161,9 @@ _backlight_input_win_key_down_cb(void *data, int type 
+                 mod |= E_BINDING_MODIFIER_ALT;
+              if (ev->modifiers & ECORE_EVENT_MODIFIER_WIN)
+                 mod |= E_BINDING_MODIFIER_WIN;
+-             
++
+              if (bind->key && (!strcmp(bind->key, ev->keyname)) &&
+-                 ((bind->modifiers == (int)mod) || (bind->any_mod)))
++                 ((bind->modifiers == mod) || (bind->any_mod)))
+                {
+                   _backlight_popup_free(inst);
+                   break;
 @@ -437,7 +437,7 @@ _gc_orient(E_Gadcon_Client *gcc, E_Gadcon_Orient orien
     e_gadcon_client_min_size_set(gcc, mw, mh);
  }

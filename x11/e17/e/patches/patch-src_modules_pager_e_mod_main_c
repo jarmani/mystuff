@@ -3,8 +3,8 @@ $OpenBSD$
 Fix warning: initialization from incompatible pointer type
 Due to E_Gadcon_Client_Class change
 
---- src/modules/pager/e_mod_main.c.orig	Sun Oct 16 18:31:33 2011
-+++ src/modules/pager/e_mod_main.c	Wed Nov  2 21:31:48 2011
+--- src/modules/pager/e_mod_main.c.orig	Fri Nov 11 21:35:04 2011
++++ src/modules/pager/e_mod_main.c	Mon Nov 14 10:11:00 2011
 @@ -5,7 +5,7 @@
  static E_Gadcon_Client *_gc_init(E_Gadcon *gc, const char *name, const char *id, const char *style);
  static void _gc_shutdown(E_Gadcon_Client *gcc);

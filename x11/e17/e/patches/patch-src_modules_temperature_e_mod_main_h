@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Fix warning: comparison of unsigned expression < 0 is always false,
+    XXX int instead of enum Unit ... ?
+
+--- src/modules/temperature/e_mod_main.h.orig	Mon Nov  7 23:04:15 2011
++++ src/modules/temperature/e_mod_main.h	Mon Nov  7 23:04:20 2011
+@@ -31,7 +31,7 @@ struct _Config_Face
+ #endif
+    int sensor_type;
+    const char *sensor_name;
+-   Unit units;
++   int units;
+    /* config state */
+    E_Gadcon_Client *gcc;
+    Evas_Object *o_temp;

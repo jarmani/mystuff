@@ -1,0 +1,30 @@
+$OpenBSD$
+
+Fix warning: format '%li' expects type 'long int', but argument 4 has type 'int'.
+
+--- src/bin/e_utils.c.orig	Mon Nov  7 22:27:09 2011
++++ src/bin/e_utils.c	Mon Nov  7 22:33:42 2011
+@@ -905,17 +905,17 @@ e_util_file_time_get(time_t ftime)
+ 	if (diff <= 60)
+ 	  snprintf(buf, sizeof(buf), _("In the last Minute"));
+ 	else if (diff >= 31526000)
+-	  snprintf(buf, sizeof(buf), _("%li Years ago"), (diff / 31526000));
++	  snprintf(buf, sizeof(buf), _("%li Years ago"), (long int)(diff / 31526000));
+ 	else if (diff >= 2592000)
+-	  snprintf(buf, sizeof(buf), _("%li Months ago"), (diff / 2592000));
++	  snprintf(buf, sizeof(buf), _("%li Months ago"), (long int)(diff / 2592000));
+ 	else if (diff >= 604800)
+-	  snprintf(buf, sizeof(buf), _("%li Weeks ago"), (diff / 604800));
++	  snprintf(buf, sizeof(buf), _("%li Weeks ago"), (long int)(diff / 604800));
+ 	else if (diff >= 86400)
+-	  snprintf(buf, sizeof(buf), _("%li Days ago"), (diff / 86400));
++	  snprintf(buf, sizeof(buf), _("%li Days ago"), (long int)(diff / 86400));
+ 	else if (diff >= 3600)
+-	  snprintf(buf, sizeof(buf), _("%li Hours ago"), (diff / 3600));
++	  snprintf(buf, sizeof(buf), _("%li Hours ago"), (long int)(diff / 3600));
+ 	else if (diff > 60)
+-	  snprintf(buf, sizeof(buf), _("%li Minutes ago"), (diff / 60));
++	  snprintf(buf, sizeof(buf), _("%li Minutes ago"), (long int)(diff / 60));
+      }
+ 
+    if (buf[0])

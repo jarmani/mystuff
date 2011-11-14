@@ -1,0 +1,60 @@
+$OpenBSD$
+
+Fix warning: unused parameter 'v', 'udi'
+
+--- src/bin/e_fm/e_fm_main.c.orig	Mon Nov  7 21:52:48 2011
++++ src/bin/e_fm/e_fm_main.c	Mon Nov  7 21:59:26 2011
+@@ -216,7 +216,7 @@ _e_volume_free(E_Volume *v)
+ /* API functions */
+ 
+ EAPI void
+-e_volume_mount(E_Volume *v)
++e_volume_mount(E_Volume *v __UNUSED__)
+ {
+   switch (mode)
+     {
+@@ -242,7 +242,7 @@ e_volume_mount(E_Volume *v)
+ 
+ 
+ EAPI void
+-e_volume_unmount(E_Volume *v)
++e_volume_unmount(E_Volume *v __UNUSED__)
+ {
+   switch (mode)
+     {
+@@ -267,7 +267,7 @@ e_volume_unmount(E_Volume *v)
+ }
+ 
+ EAPI void
+-e_volume_eject(E_Volume *v)
++e_volume_eject(E_Volume *v __UNUSED__)
+ {
+   switch (mode)
+     {
+@@ -292,7 +292,7 @@ e_volume_eject(E_Volume *v)
+ }
+ 
+ EAPI E_Volume *
+-e_volume_find(const char *udi)
++e_volume_find(const char *udi __UNUSED__)
+ {
+    switch (mode)
+      {
+@@ -315,7 +315,7 @@ e_volume_find(const char *udi)
+ }
+ 
+ EAPI void
+-e_storage_del(const char *udi)
++e_storage_del(const char *udi __UNUSED__)
+ {
+   switch (mode)
+     {
+@@ -340,7 +340,7 @@ e_storage_del(const char *udi)
+ }
+ 
+ EAPI E_Storage *
+-e_storage_find(const char *udi)
++e_storage_find(const char *udi __UNUSED__)
+ {
+   switch (mode)
+     {

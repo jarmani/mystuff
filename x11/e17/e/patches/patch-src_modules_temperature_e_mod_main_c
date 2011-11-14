@@ -4,7 +4,7 @@ Fix warning: initialization from incompatible pointer type
 Due to E_Gadcon_Client_Class change
 
 --- src/modules/temperature/e_mod_main.c.orig	Mon Oct 31 16:59:24 2011
-+++ src/modules/temperature/e_mod_main.c	Wed Nov  2 21:31:48 2011
++++ src/modules/temperature/e_mod_main.c	Mon Nov  7 23:03:44 2011
 @@ -17,7 +17,7 @@
  static E_Gadcon_Client *_gc_init(E_Gadcon *gc, const char *name, const char *id, const char *style);
  static void _gc_shutdown(E_Gadcon_Client *gcc);

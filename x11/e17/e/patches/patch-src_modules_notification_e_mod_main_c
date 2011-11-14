@@ -3,8 +3,8 @@ $OpenBSD$
 Fix warning: initialization from incompatible pointer type
 Due to E_Gadcon_Client_Class change
 
---- src/modules/notification/e_mod_main.c.orig	Sun Oct 30 17:01:07 2011
-+++ src/modules/notification/e_mod_main.c	Wed Nov  2 21:31:48 2011
+--- src/modules/notification/e_mod_main.c.orig	Fri Nov 11 21:34:58 2011
++++ src/modules/notification/e_mod_main.c	Mon Nov 14 10:11:00 2011
 @@ -6,7 +6,7 @@ static E_Gadcon_Client *_gc_init(E_Gadcon   *gc,
                                   const char *id,
                                   const char *style);
@@ -22,4 +22,4 @@ Due to E_Gadcon_Client_Class change
 +static const char *
  _gc_label(E_Gadcon_Client_Class *client_class __UNUSED__)
  {
-    return D_("Notification Box");
+    return _("Notification Box");
