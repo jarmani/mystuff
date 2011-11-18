@@ -18,11 +18,11 @@ MODULES =		converters/libiconv
 USE_LIBTOOL =		Yes
 
 # use obsd malloc only (already a pool allocator, random and quite as fast)
-CONFIGURE_ARGS =	--disable-doc \
-			--enable-default-mempool
+CONFIGURE_ARGS =	--disable-doc
 
 .ifdef DEBUG
-CONFIGURE_ARGS +=	--enable-stringshare-usage
+CONFIGURE_ARGS +=	--enable-stringshare-usage \
+			--enable-default-mempool
 .else
 CONFIGURE_ARGS +=	--with-internal-maximum-log-level=2 \
 			--disable-debug-threads \

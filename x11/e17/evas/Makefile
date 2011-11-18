@@ -35,16 +35,19 @@ LIB_DEPENDS =		x11/e17/eet>=1.5 \
 # use XCB
 CONFIGURE_ARGS =	--disable-doc \
 			--enable-gl-xcb \
-			--enable-software-xcb \
-			--enable-word-cache \
-			--enable-metric-cache
+			--enable-software-xcb
 
-.ifndef DEBUG
+.ifdef DEBUG
+# XXX
+# work on word/metric cache must be done
+CONFIGURE_ARGS +=	--enable-word-cache \
+			--enable-metric-cache
+.else
 CONFIGURE_ARGS +=	--disable-evas-magic-debug
 .endif
 
-# work in progress ...
-#src/lib/include/evas_blend_ops.h:12:25: error: immintrin.h: No such file or directory
+# XXX
+# src/lib/include/evas_blend_ops.h:12:25: error: immintrin.h: No such file or directory
 CONFIGURE_ARGS +=	--disable-cpu-sse3
 
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include -Wall -Wextra" \
