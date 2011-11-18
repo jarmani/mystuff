@@ -1,10 +1,9 @@
 # $OpenBSD: Makefile,v 1.20 2011/03/15 19:41:31 jasper Exp $
 
 COMMENT =		EFL canvas API for X
-DISTNAME =		evas-1.0.${VERSION}
-EPOCH =			3
+DISTNAME =		evas-1.1.0
 
-SHARED_LIBS +=		evas 1.0
+SHARED_LIBS +=		evas 1.1
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -23,7 +22,7 @@ WANTLIB += xcb-render xcb-shm xml2 z
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS =		x11/e17/eet>=1.4 \
+LIB_DEPENDS =		x11/e17/eet>=1.5 \
 			graphics/libungif \
 			graphics/png \
 			graphics/tiff \
@@ -36,10 +35,9 @@ LIB_DEPENDS =		x11/e17/eet>=1.4 \
 # use XCB
 CONFIGURE_ARGS =	--disable-doc \
 			--enable-gl-xcb \
-			--enable-software-xcb
-
-#			--enable-word-cache \
-#			--enable-metric-cache \
+			--enable-software-xcb \
+			--enable-word-cache \
+			--enable-metric-cache
 
 .ifndef DEBUG
 CONFIGURE_ARGS +=	--disable-evas-magic-debug

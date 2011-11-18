@@ -1,10 +1,9 @@
 # $OpenBSD: Makefile,v 1.9 2011/03/15 19:39:28 jasper Exp $
 
 COMMENT =		EFL DBus component
-DISTNAME =		e_dbus-1.0.${VERSION}
-EPOCH =			2
+DISTNAME =		e_dbus-1.1.0
 
-SO_VERSION =		1.0
+SO_VERSION =		1.1
 .for _lib in edbus enotify econnman ehal eofono ebluez eukit
 SHARED_LIBS +=		${_lib} ${SO_VERSION}
 .endfor
@@ -23,7 +22,7 @@ WANTLIB += fribidi glib-2.0 jpeg m pcre pthread ssl z
 MODULES =		devel/gettext
 
 LIB_DEPENDS =		x11/dbus \
-			x11/e17/ecore>=1.0
+			x11/e17/ecore>=1.1
 
 CONFIGURE_ARGS =	--disable-doc
 

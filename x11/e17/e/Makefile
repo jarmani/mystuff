@@ -20,10 +20,10 @@ WANTLIB += ecore_input_evas ecore_ipc ecore_x edbus edje eet efreet efreet_mime
 WANTLIB += efreet_trash ehal eina embryo eofono evas execinfo expat fontconfig
 WANTLIB += freetype glib-2.0 idn jpeg lua m pcre pthread ssl xcb xcb-shape z
 
-LIB_DEPENDS =		x11/e17/edje>=1.0 \
-			x11/e17/efreet>=1.0 \
-			x11/e17/ecore>=1.0 \
-			x11/e17/e_dbus>=1.0 \
+LIB_DEPENDS =		x11/e17/edje>=1.1 \
+			x11/e17/efreet>=1.1 \
+			x11/e17/ecore>=1.1 \
+			x11/e17/e_dbus>=1.1 \
 			devel/libexecinfo
 
 RUN_DEPENDS =		devel/desktop-file-utils

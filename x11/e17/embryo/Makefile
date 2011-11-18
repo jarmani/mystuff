@@ -1,10 +1,9 @@
 # $OpenBSD: Makefile,v 1.10 2011/03/15 19:41:17 jasper Exp $
 
 COMMENT =		EFL C like scripting language
-DISTNAME =		embryo-1.0.${VERSION}
-EPOCH =			3
+DISTNAME =		embryo-1.1.0
 
-SHARED_LIBS +=		embryo 1.0
+SHARED_LIBS +=		embryo 1.1
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -13,7 +12,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		converters/libiconv
-LIB_DEPENDS =		x11/e17/eina>=1.0
+LIB_DEPENDS =		x11/e17/eina>=1.1
 
 WANTLIB += c eina m pthread
 

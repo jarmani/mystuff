@@ -253,6 +253,12 @@ lib/enlightenment/modules/conf_performance/module.desktop
 lib/enlightenment/modules/conf_performance/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/
 lib/enlightenment/modules/conf_performance/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.a
 lib/enlightenment/modules/conf_performance/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.la
+lib/enlightenment/modules/conf_randr/
+lib/enlightenment/modules/conf_randr/e-module-conf_randr.edj
+lib/enlightenment/modules/conf_randr/module.desktop
+lib/enlightenment/modules/conf_randr/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/
+lib/enlightenment/modules/conf_randr/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.a
+lib/enlightenment/modules/conf_randr/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.la
 lib/enlightenment/modules/conf_shelves/
 lib/enlightenment/modules/conf_shelves/e-module-conf_shelves.edj
 lib/enlightenment/modules/conf_shelves/module.desktop
@@ -301,6 +307,7 @@ lib/enlightenment/modules/dropshadow/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/
 lib/enlightenment/modules/dropshadow/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.a
 lib/enlightenment/modules/dropshadow/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.la
 lib/enlightenment/modules/everything/
+lib/enlightenment/modules/everything/e-module-everything-start.edj
 lib/enlightenment/modules/everything/e-module-everything.edj
 lib/enlightenment/modules/everything/module.desktop
 lib/enlightenment/modules/everything/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/
