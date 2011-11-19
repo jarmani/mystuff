@@ -15,6 +15,7 @@ lib/enlightenment/modules/conf_keybindings/openbsd${OSREV}-${FULLARCH}-ver-pre-s
 lib/enlightenment/modules/conf_menus/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/conf_paths/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/conf_performance/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
+lib/enlightenment/modules/conf_randr/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/conf_shelves/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/conf_theme/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/conf_wallpaper2/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so

@@ -1,10 +1,9 @@
 # $OpenBSD: Makefile,v 1.19 2011/03/15 19:40:04 jasper Exp $
 
 COMMENT =		EFL complex graphical design & layout library
-DISTNAME =		edje-1.0.${VERSION}
-EPOCH =			3
+DISTNAME =		edje-1.1.0
 
-SHARED_LIBS +=		edje 1.0
+SHARED_LIBS +=		edje 1.1
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -31,18 +30,19 @@ USE_LIBTOOL =		Yes
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		misc/shared-mime-info>=0.21
 
-LIB_DEPENDS =		x11/e17/ecore>=1.0 \
-			x11/e17/embryo>=1.0
+LIB_DEPENDS =		x11/e17/ecore>=1.1 \
+			x11/e17/embryo>=1.1
 
-CONFIGURE_ARGS =	--disable-doc \
-			--enable-amalgamation
+CONFIGURE_ARGS =	--disable-doc
+
+.ifndef DEBUG
+CONFIGURE_ARGS +=	--enable-amalgamation
+.endif
 
 # perf ?
 #	--enable-edje-program-cache
 #	--enable-edje-calc-cache
 #    don't use floating point, for architectures without FPU
 #	--enable-fixed-point
-
-CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -Wall -Wextra"
 
 .include <bsd.port.mk>
