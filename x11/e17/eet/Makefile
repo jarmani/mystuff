@@ -28,7 +28,7 @@ CONFIGURE_ARGS +=	--disable-assert \
 			--enable-amalgamation
 .endif
 
-CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -Wall -Wextra" \
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -I${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

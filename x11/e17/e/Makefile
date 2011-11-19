@@ -73,7 +73,7 @@ CONFIGURE_ARGS +=	--disable-doc \
 #			--with-x \
 #			--disable-dependency-tracking
 
-CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include -Wall -Wextra" \
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 # Needed to properly build static archives.

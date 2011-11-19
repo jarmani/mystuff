@@ -45,6 +45,4 @@ CONFIGURE_ARGS +=	--enable-amalgamation
 #    don't use floating point, for architectures without FPU
 #	--enable-fixed-point
 
-CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -Wall -Wextra"
-
 .include <bsd.port.mk>

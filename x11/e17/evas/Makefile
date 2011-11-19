@@ -50,7 +50,7 @@ CONFIGURE_ARGS +=	--disable-evas-magic-debug
 # src/lib/include/evas_blend_ops.h:12:25: error: immintrin.h: No such file or directory
 CONFIGURE_ARGS +=	--disable-cpu-sse3
 
-CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include -Wall -Wextra" \
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}

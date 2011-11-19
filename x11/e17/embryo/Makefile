@@ -20,6 +20,4 @@ USE_LIBTOOL =		Yes
 
 CONFIGURE_ARGS =	--disable-doc
 
-CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -Wall -Wextra"
-
 .include <bsd.port.mk>

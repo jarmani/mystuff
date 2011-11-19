@@ -26,7 +26,7 @@ LIB_DEPENDS =		x11/dbus \
 
 CONFIGURE_ARGS =	--disable-doc
 
-CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -Wall -Wextra" \
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
