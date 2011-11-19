@@ -21,8 +21,7 @@ USE_LIBTOOL =		Yes
 CONFIGURE_ARGS =	--disable-doc
 
 .ifdef DEBUG
-CONFIGURE_ARGS +=	--enable-stringshare-usage \
-			--enable-default-mempool
+CONFIGURE_ARGS +=	--enable-stringshare-usage
 .else
 CONFIGURE_ARGS +=	--with-internal-maximum-log-level=2 \
 			--disable-debug-threads \
