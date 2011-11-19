@@ -13,12 +13,3 @@ Fix warning: '_fill_data' declared inline after being called
                                 E_Connman_Module_Context *ctxt);
  static Evas_Object *_basic_create(E_Config_Dialog      *dialog,
                                    Evas                 *evas,
-@@ -520,7 +520,7 @@ _networks_button_down_cb(void       *data,
- #endif
- 
- static void
--_networks_list_create(Evas                 *evas, 
-+_networks_list_create(Evas                 *evas,
-                       E_Config_Dialog_Data *cfdata)
- {
-    struct connman_config_network_ui *ui;

@@ -1,10 +1,9 @@
 # $OpenBSD: Makefile,v 1.18 2011/09/16 12:29:13 espie Exp $
 
 COMMENT =		EFL core event/X abstraction layer
-DISTNAME =		ecore-1.0.${VERSION}
-EPOCH =			3
+DISTNAME =		ecore-1.1.0
 
-SO_VERSION =		1.0
+SO_VERSION =		1.1
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in ecore ecore_con ecore_evas ecore_file ecore_imf \
@@ -34,7 +33,7 @@ WANTLIB += xcb-xtest z
 
 LIB_DEPENDS =		devel/glib2 \
 			net/curl \
-			x11/e17/evas>=1.0 \
+			x11/e17/evas>=1.1 \
 			devel/fribidi>=0.19.2
 #			net/libcares \
 
