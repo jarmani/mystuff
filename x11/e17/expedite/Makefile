@@ -12,7 +12,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB += X11 Xext Xrender c eet eina evas m pthread stdc++ xcb
 WANTLIB += xcb-keysyms
 
-LIB_DEPENDS =		x11/e17/evas>=1.0.999
+LIB_DEPENDS =		x11/e17/evas>=1.1
 
 USE_LIBTOOL =		Yes
 

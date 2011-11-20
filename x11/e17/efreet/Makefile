@@ -19,8 +19,6 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB += c crypto curl ecore ecore_con ecore_file eet eina glib-2.0 idn
 WANTLIB += jpeg m pcre pthread ssl z
 
-#WANTLIB += cares
-
 MODULES =		devel/gettext
 
 LIB_DEPENDS =		x11/e17/ecore>=1.1
@@ -28,9 +26,5 @@ LIB_DEPENDS =		x11/e17/ecore>=1.1
 USE_LIBTOOL =		Yes
 
 CONFIGURE_ARGS =	--disable-doc
-# enable strict specification compliance
-#			--enable-strict-spec
-# disable sloppy specification compliance
-#			--disable-sloppy-spec
 
 .include <bsd.port.mk>

@@ -37,7 +37,6 @@ CONFIGURE_ARGS +=	--disable-doc \
 			--disable-device-udev \
 			--disable-mount-udisks \
 			--disable-mixer \
-			--disable-mixer \
 			--disable-bluez \
 			--disable-backlight
 # Broken configure shit HAVE_ECORE_TXT=TRUE not defined correctly

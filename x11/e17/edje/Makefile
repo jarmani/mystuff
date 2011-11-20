@@ -39,10 +39,4 @@ CONFIGURE_ARGS =	--disable-doc
 CONFIGURE_ARGS +=	--enable-amalgamation
 .endif
 
-# perf ?
-#	--enable-edje-program-cache
-#	--enable-edje-calc-cache
-#    don't use floating point, for architectures without FPU
-#	--enable-fixed-point
-
 .include <bsd.port.mk>
