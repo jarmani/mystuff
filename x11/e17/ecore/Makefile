@@ -21,14 +21,10 @@ MODULES =		devel/gettext
 
 USE_LIBTOOL =		Yes
 
-WANTLIB += X11 X11-xcb Xau Xdmcp c crypto curl eet eina evas expat
-WANTLIB += fontconfig freetype fribidi glib-2.0 idn jpeg m pcre pixman-1
-WANTLIB += pthread pthread-stubs ssl xcb xcb-atom xcb-aux xcb-composite
-WANTLIB += xcb-damage xcb-dpms xcb-event xcb-icccm xcb-image xcb-keysyms
-WANTLIB += xcb-property xcb-randr xcb-render xcb-render-util xcb-screensaver
-WANTLIB += xcb-shape xcb-shm xcb-sync xcb-xfixes xcb-xinerama xcb-xprint
-WANTLIB += xcb-xtest z
-
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender Xss Xtst c crypto curl eet eina evas
+WANTLIB += expat fontconfig freetype fribidi glib-2.0 idn jpeg
+WANTLIB += m pcre pthread ssl xcb z
 #WANTLIB += cares
 
 LIB_DEPENDS =		devel/glib2 \
@@ -38,8 +34,7 @@ LIB_DEPENDS =		devel/glib2 \
 #			net/libcares \
 
 CONFIGURE_ARGS =	--disable-doc \
-			--disable-gnutls \
-			--enable-ecore-x-xcb
+			--disable-gnutls
 #			--enable-cares
 
 # use eina_lock_take instead of EINA_MAIN_LOOP_CHECK_RETURN

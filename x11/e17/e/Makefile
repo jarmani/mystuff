@@ -37,7 +37,9 @@ CONFIGURE_ARGS +=	--disable-doc \
 			--disable-device-udev \
 			--disable-mount-udisks \
 			--disable-mixer \
-			--disable-illume2 # make edje_cc segfault
+			--disable-mixer \
+			--disable-bluez \
+			--disable-backlight
 # Broken configure shit HAVE_ECORE_TXT=TRUE not defined correctly
 # does not appear in AM_CONDITIONAL . Usually this means the macro
 # was only invoked conditionally.

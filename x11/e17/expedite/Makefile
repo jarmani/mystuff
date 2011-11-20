@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		test and benchmark for the Evas canvas library
-DISTNAME =		expedite-0.7.2
+DISTNAME =		expedite-1.1.0
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
