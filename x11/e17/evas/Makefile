@@ -17,8 +17,8 @@ WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm cairo croco-0.6
 WANTLIB += crypto drm eet eina expat ffi fontconfig freetype fribidi 
 WANTLIB += gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 
 WANTLIB += gthread-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre 
-WANTLIB += pixman-1 png pthread-stubs rsvg-2 ssl stdc++ tiff xcb xcb-aux 
-WANTLIB += xcb-image xcb-render xcb-shm xml2 z
+WANTLIB += pixman-1 png pthread-stubs rsvg-2 ssl stdc++ tiff xcb
+WANTLIB +=  xcb-render xcb-shm xml2 z
 
 MODULES=		devel/gettext
 
@@ -33,9 +33,7 @@ LIB_DEPENDS =		x11/e17/eet>=1.5 \
 			x11/gnome/librsvg
 
 # use XCB
-CONFIGURE_ARGS =	--disable-doc \
-			--enable-gl-xcb \
-			--enable-software-xcb
+CONFIGURE_ARGS =	--disable-doc
 
 .ifdef DEBUG
 # XXX
