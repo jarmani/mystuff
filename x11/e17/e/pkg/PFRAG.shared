@@ -1,7 +1,5 @@
 @comment $OpenBSD: PFRAG.shared,v 1.6 2011/01/19 18:14:59 landry Exp $
-lib/enlightenment/modules/backlight/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/battery/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
-lib/enlightenment/modules/bluez/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/clock/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/comp/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/conf/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
@@ -30,6 +28,17 @@ lib/enlightenment/modules/fileman_opinfo/openbsd${OSREV}-${FULLARCH}-ver-pre-svn
 lib/enlightenment/modules/gadman/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/ibar/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/ibox/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
+lib/enlightenment/modules/illume-bluetooth/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
+lib/enlightenment/modules/illume-home-toggle/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
+lib/enlightenment/modules/illume-home/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
+lib/enlightenment/modules/illume-indicator/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
+lib/enlightenment/modules/illume-kbd-toggle/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
+lib/enlightenment/modules/illume-keyboard/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
+lib/enlightenment/modules/illume-mode-toggle/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
+lib/enlightenment/modules/illume-softkey/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
+lib/enlightenment/modules/illume2/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
+lib/enlightenment/modules/illume2/policies/illume.so
+lib/enlightenment/modules/illume2/policies/tablet.so
 lib/enlightenment/modules/msgbus/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/notification/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/ofono/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
