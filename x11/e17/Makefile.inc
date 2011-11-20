@@ -21,7 +21,7 @@ MAINTAINER ?=		Jonathan Armani <armani@openbsd.org>
 
 NO_REGRESS ?=		Yes
 
-VERSION ?=		999.65384
+VERSION ?=		999.65428
 
 .ifdef DEBUG
 DEBUG +=		-O0 -g
