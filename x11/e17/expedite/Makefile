@@ -9,8 +9,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += X11 Xext Xrender c eet eina evas m pthread stdc++ xcb
-WANTLIB += xcb-keysyms
+WANTLIB += X11 c eet eina evas m pthread stdc++
 
 LIB_DEPENDS =		x11/e17/evas>=1.1
 
