@@ -24,11 +24,13 @@ CONFIGURE_STYLE =	gnu
 
 NO_REGRESS =		Yes
 
-RUN_DEPENDS =		net/ldns/libldns	\
+LIB_DEPENDS =		net/ruby-dnsruby	\
 			textproc/libxml		\
-			devel/ruby-gems		\
-			security/ruby-ezcrypto	\
+			net/ldns/libldns	\
 			databases/sqlite3
+RUN_DEPENDS =		devel/ruby-gems		\
+			security/ruby-ezcrypto	\
+			security/softhsm
 
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lpthread"
