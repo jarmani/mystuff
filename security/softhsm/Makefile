@@ -11,7 +11,7 @@ HOMEPAGE =		http://www.opendnssec.org/softhsm/
 
 MAINTAINER =		Fabien Romano <fabien@openbsd.org>
 
-# LGPL v2.1
+# XXX
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
