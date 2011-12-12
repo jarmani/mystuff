@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += c crypto m pthread z
-WANTLIB += iconv ldns sqlite3 xml2
+WANTLIB += c crypto iconv ldns m pthread sqlite3 xml2 z
 
 MASTER_SITES =		http://www.opendnssec.org/files/source/
 
