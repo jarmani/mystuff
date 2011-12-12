@@ -11,14 +11,12 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += X11 X11-xcb c crypto curl ecore ecore_con ecore_evas
+WANTLIB += X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender Xss Xtst c crypto curl ecore ecore_con ecore_evas
 WANTLIB += ecore_file ecore_imf ecore_imf_evas ecore_input ecore_input_evas
 WANTLIB += ecore_x eet eina embryo evas expat fontconfig freetype fribidi
 WANTLIB += glib-2.0 idn jpeg lua m pcre pixman-1 pthread pthread-stubs ssl xcb
-WANTLIB += xcb-atom xcb-composite xcb-damage xcb-dpms xcb-event xcb-icccm
-WANTLIB += xcb-image xcb-keysyms xcb-property xcb-randr xcb-render
-WANTLIB += xcb-render-util xcb-screensaver xcb-shape xcb-shm xcb-sync
-WANTLIB += xcb-xfixes xcb-xinerama xcb-xprint xcb-xtest z
+WANTLIB += z
 
 #WANTLIB += cares
 
