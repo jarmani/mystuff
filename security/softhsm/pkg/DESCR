@@ -1,2 +1,2 @@
-SoftHSM is an implementation of a cryptographic store accessible through a PKCS#11 interface. You can use SoftHSM as an 
-HSM for OpenDNSSEC.
+SoftHSM is an implementation of a cryptographic store accessible through a
+PKCS#11 interface. You can use SoftHSM as an HSM for OpenDNSSEC.
