@@ -33,7 +33,8 @@ RUN_DEPENDS =		devel/ruby-gems		\
 			security/softhsm
 
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lpthread"
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lpthread" \
+			GREP_OPTIONS="-E"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/opendnssec
