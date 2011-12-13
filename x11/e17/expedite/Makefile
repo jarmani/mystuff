@@ -1,10 +1,6 @@
 # $OpenBSD$
 
-<<<<<<< HEAD
 COMMENT =		test and benchmark for the EFL Evas canvas library
-=======
-COMMENT =		test and benchmark for the Evas canvas library
->>>>>>> 89e6055... Update to official release
 DISTNAME =		expedite-1.1.0
 
 # BSD
