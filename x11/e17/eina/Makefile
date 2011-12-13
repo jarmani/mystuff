@@ -17,7 +17,6 @@ MODULES =		converters/libiconv
 
 USE_LIBTOOL =		Yes
 
-# use obsd malloc only (already a pool allocator, random and quite as fast)
 CONFIGURE_ARGS =	--disable-doc
 
 .ifdef DEBUG

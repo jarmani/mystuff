@@ -13,15 +13,13 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES +=		devel/gettext \
 			lang/lua
 
-WANTLIB += X11 X11-xcb c crypto curl dbus-1 ebluez econnman ecore ecore_con 
-WANTLIB += ecore_evas ecore_file ecore_imf ecore_imf_evas ecore_input 
-WANTLIB += ecore_input_evas ecore_ipc ecore_x edbus edje eet efreet efreet_mime 
-WANTLIB += efreet_trash ehal eina embryo enotify eofono evas execinfo expat 
-WANTLIB += fontconfig freetype fribidi glib-2.0 idn jpeg lua m pcre pixman-1 
-WANTLIB += pthread pthread-stubs ssl xcb xcb-atom xcb-composite xcb-damage 
-WANTLIB += xcb-dpms xcb-event xcb-icccm xcb-image xcb-keysyms xcb-property 
-WANTLIB += xcb-randr xcb-render xcb-render-util xcb-screensaver xcb-shape 
-WANTLIB += xcb-shm xcb-sync xcb-xfixes xcb-xinerama xcb-xprint xcb-xtest z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender Xss Xtst c crypto curl dbus-1 econnman ecore
+WANTLIB += ecore_con ecore_evas ecore_file ecore_imf ecore_imf_evas ecore_input
+WANTLIB += ecore_input_evas ecore_ipc ecore_x edbus edje eet efreet efreet_mime
+WANTLIB += efreet_trash ehal eina embryo enotify eofono evas execinfo expat
+WANTLIB += fontconfig freetype fribidi glib-2.0 idn jpeg lua m pcre
+WANTLIB += pthread ssl xcb xcb-shape z
 
 LIB_DEPENDS =		x11/e17/edje>=1.1 \
 			x11/e17/efreet>=1.1 \
@@ -36,7 +34,6 @@ CONFIGURE_ARGS +=	--disable-doc \
 			--disable-mount-hal \
 			--disable-device-udev \
 			--disable-mount-udisks \
-			--disable-mixer \
 			--disable-mixer \
 			--disable-bluez \
 			--disable-backlight

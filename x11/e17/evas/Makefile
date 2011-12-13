@@ -32,15 +32,9 @@ LIB_DEPENDS =		x11/e17/eet>=1.5 \
 			devel/fribidi>=0.19.2 \
 			x11/gnome/librsvg
 
-# use XCB
 CONFIGURE_ARGS =	--disable-doc
 
-.ifdef DEBUG
-# XXX
-# work on word/metric cache must be done
-CONFIGURE_ARGS +=	--enable-word-cache \
-			--enable-metric-cache
-.else
+.ifndef DEBUG
 CONFIGURE_ARGS +=	--disable-evas-magic-debug
 .endif
 
