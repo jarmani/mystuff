@@ -13,13 +13,13 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES +=		devel/gettext \
 			lang/lua
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xss Xtst c crypto curl dbus-1 econnman ecore
-WANTLIB += ecore_con ecore_evas ecore_file ecore_imf ecore_imf_evas ecore_input
-WANTLIB += ecore_input_evas ecore_ipc ecore_x edbus edje eet efreet efreet_mime
-WANTLIB += efreet_trash ehal eina embryo enotify eofono evas execinfo expat
-WANTLIB += fontconfig freetype fribidi glib-2.0 idn jpeg lua m pcre
-WANTLIB += pthread ssl xcb xcb-shape z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr 
+WANTLIB += Xrender Xss Xtst c crypto curl dbus-1 econnman0_7x ecore ecore_con 
+WANTLIB += ecore_evas ecore_file ecore_imf ecore_imf_evas ecore_input 
+WANTLIB += ecore_input_evas ecore_ipc ecore_x edbus edje eet efreet efreet_mime 
+WANTLIB += efreet_trash ehal eina embryo enotify eofono evas execinfo expat 
+WANTLIB += fontconfig freetype fribidi glib-2.0 idn jpeg lua m pcre pthread ssl 
+WANTLIB += xcb xcb-shape z
 
 LIB_DEPENDS =		x11/e17/edje>=1.1 \
 			x11/e17/efreet>=1.1 \
