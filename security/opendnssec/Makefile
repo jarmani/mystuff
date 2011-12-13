@@ -10,7 +10,7 @@ HOMEPAGE =		http://www.opendnssec.org/
 
 MAINTAINER =		Fabien Romano <fabien@openbsd.org>
 
-# LGPL v2.1
+# XXX
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
@@ -24,14 +24,17 @@ CONFIGURE_STYLE =	gnu
 
 NO_REGRESS =		Yes
 
-RUN_DEPENDS =		net/ldns/libldns	\
+LIB_DEPENDS =		net/ruby-dnsruby	\
 			textproc/libxml		\
-			devel/ruby-gems		\
-			security/ruby-ezcrypto	\
+			net/ldns/libldns	\
 			databases/sqlite3
+RUN_DEPENDS =		devel/ruby-gems		\
+			security/ruby-ezcrypto	\
+			security/softhsm
 
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lpthread"
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lpthread" \
+			GREP_OPTIONS="-E"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/opendnssec

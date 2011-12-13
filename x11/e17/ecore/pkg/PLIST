@@ -1,6 +1,5 @@
 @comment $OpenBSD: PLIST,v 1.4 2011/01/16 00:40:32 laurent Exp $
 %%SHARED%%
-@bin bin/ecore_test
 include/ecore-1/
 include/ecore-1/Ecore.h
 include/ecore-1/Ecore_Con.h
@@ -15,6 +14,9 @@ include/ecore-1/Ecore_Ipc.h
 include/ecore-1/Ecore_X.h
 include/ecore-1/Ecore_X_Atoms.h
 include/ecore-1/Ecore_X_Cursor.h
+lib/ecore/
+lib/ecore/immodules/
+lib/ecore/immodules/xim.la
 lib/libecore.a
 lib/libecore.la
 lib/libecore_con.a

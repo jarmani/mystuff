@@ -1,0 +1,21 @@
+# $OpenBSD$
+
+COMMENT=		Ruby DNS client library
+
+DISTNAME=		dnsruby-1.53
+CATEGORIES=		net
+
+# XXX
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+MODULES=		lang/ruby
+
+CONFIGURE_STYLE=	ruby gem
+
+BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=		${MODRUBY_FLAVOR}
+
+.include <bsd.port.mk>

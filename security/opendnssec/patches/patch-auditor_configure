@@ -1,24 +1,13 @@
 $OpenBSD$
-
-fix grep check
-
---- auditor/configure.orig	Mon Dec 12 23:32:52 2011
-+++ auditor/configure	Mon Dec 12 23:32:56 2011
-@@ -2637,7 +2637,7 @@ if test "x$XMLLINT" = "x"; then
- fi
- 
- # check for a decent grep
--for ac_prog in ggrep grep
-+for ac_prog in ggrep egrep grep
- do
-   # Extract the first word of "$ac_prog", so it can be a program name with args.
- set dummy $ac_prog; ac_word=$2
+Fix grep compatibility check, note we use grep -E
+--- auditor/configure.orig	Tue Dec 13 12:24:03 2011
++++ auditor/configure	Tue Dec 13 12:25:00 2011
 @@ -2689,7 +2689,7 @@ test -n "$GREP" || GREP="
  #
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for grep compability" >&5
  $as_echo_n "checking for grep compability... " >&6; }
 -if (echo "alpha\naardvark\n" | ${GREP} '^a\|^b' >/dev/null); then
-+if (echo "alpha\naardvark\n" | ${GREP} '^a|^b' >/dev/null); then
++if (echo "alpha\naardvark\n" | ${GREP} -E '^a|^b' >/dev/null); then
      { $as_echo "$as_me:${as_lineno-$LINENO}: result: ok" >&5
  $as_echo "ok" >&6; }
  else

@@ -4,9 +4,10 @@ COMMENT =		EFL DBus component
 DISTNAME =		e_dbus-1.1.0
 
 SO_VERSION =		1.1
-.for _lib in edbus enotify econnman ehal eofono ebluez eukit
+.for _lib in edbus enotify ehal eofono ebluez eukit
 SHARED_LIBS +=		${_lib} ${SO_VERSION}
 .endfor
+SHARED_LIBS +=		econnman0_7x 2.0
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -16,8 +17,10 @@ PERMIT_DISTFILES_FTP =	Yes
 
 USE_LIBTOOL =		Yes
 
-WANTLIB += c crypto dbus-1 ecore eet eina evas expat fontconfig freetype
-WANTLIB += fribidi glib-2.0 jpeg m pcre pthread ssl z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr 
+WANTLIB += Xrender Xss Xtst c crypto dbus-1 ecore ecore_evas ecore_input 
+WANTLIB += ecore_input_evas ecore_x eet eina evas expat fontconfig freetype 
+WANTLIB += fribidi glib-2.0 jpeg m pcre pthread ssl xcb z
 
 MODULES =		devel/gettext
 
