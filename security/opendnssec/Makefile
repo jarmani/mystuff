@@ -35,6 +35,7 @@ RUN_DEPENDS =		devel/ruby-gems		\
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lpthread" \
 			GREP_OPTIONS="-E"
+CONFIGURE_ARGS =	--localstatedir=/var
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/opendnssec
