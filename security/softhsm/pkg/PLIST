@@ -10,5 +10,4 @@ lib/libsofthsm.la
 share/examples/softhsm/
 share/examples/softhsm/softhsm.conf
 @sample ${SYSCONFDIR}/softhsm.conf
-var/
-var/softhsm/
+@sample /var/softhsm/
