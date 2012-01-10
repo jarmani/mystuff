@@ -34,9 +34,9 @@ LIB_DEPENDS =		x11/e17/eet>=1.5 \
 
 CONFIGURE_ARGS =	--disable-doc
 
-.ifndef DEBUG
-CONFIGURE_ARGS +=	--disable-evas-magic-debug
-.endif
+#.ifndef DEBUG
+#CONFIGURE_ARGS +=	--disable-evas-magic-debug
+#.endif
 
 # XXX
 # src/lib/include/evas_blend_ops.h:12:25: error: immintrin.h: No such file or directory

@@ -21,13 +21,13 @@ CONFIGURE_ARGS =	--disable-doc
 
 .ifdef DEBUG
 CONFIGURE_ARGS +=	--enable-stringshare-usage
-.else
-CONFIGURE_ARGS +=	--with-internal-maximum-log-level=2 \
-			--disable-debug-threads \
-			--disable-magic-debug \
-			--disable-safety-checks \
-			--disable-assert \
-			--enable-amalgamation
+#.else
+#CONFIGURE_ARGS +=	--with-internal-maximum-log-level=2 \
+#			--disable-debug-threads \
+#			--disable-magic-debug \
+#			--disable-safety-checks \
+#			--disable-assert \
+#			--enable-amalgamation
 .endif
 
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
