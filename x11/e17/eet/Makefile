@@ -23,10 +23,10 @@ USE_LIBTOOL =		Yes
 CONFIGURE_ARGS =	--disable-doc \
 			--disable-gnutls
 
-.ifndef DEBUG
-CONFIGURE_ARGS +=	--disable-assert \
-			--enable-amalgamation
-.endif
+#.ifndef DEBUG
+#CONFIGURE_ARGS +=	--disable-assert \
+#			--enable-amalgamation
+#.endif
 
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -I${LOCALBASE}/lib"

@@ -58,11 +58,9 @@ share/opendnssec/zonefetch.rnc
 share/opendnssec/zonefetch.rng
 share/opendnssec/zonelist.rnc
 share/opendnssec/zonelist.rng
-var/
-var/opendnssec/
-var/opendnssec/signconf/
-var/opendnssec/signed/
-var/opendnssec/tmp/
-var/opendnssec/unsigned/
-var/run/
-var/run/opendnssec/
+@sample /var/opendnssec/
+@sample /var/opendnssec/signconf/
+@sample /var/opendnssec/signed/
+@sample /var/opendnssec/tmp/
+@sample /var/opendnssec/unsigned/
+@sample /var/run/opendnssec/

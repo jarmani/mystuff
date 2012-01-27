@@ -28,6 +28,7 @@ USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS} -lpthread "
+CONFIGURE_ARGS =	--localstatedir=/var
 
 NO_REGRESS =		Yes
 

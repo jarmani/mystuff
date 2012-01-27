@@ -34,11 +34,11 @@ LIB_DEPENDS =		devel/glib2 \
 CONFIGURE_ARGS =	--disable-doc \
 			--disable-gnutls
 
-.ifndef DEBUG
-CONFIGURE_ARGS +=	--with-internal-maximum-log-level=2 \
-			--disable-debug-threads \
-			--disable-ecore-timer-dump
-.endif
+#.ifndef DEBUG
+#CONFIGURE_ARGS +=	--with-internal-maximum-log-level=2 \
+#			--disable-debug-threads \
+#			--disable-ecore-timer-dump
+#.endif
 
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib "

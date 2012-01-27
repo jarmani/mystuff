@@ -32,8 +32,8 @@ LIB_DEPENDS =		x11/e17/ecore>=1.1 \
 
 CONFIGURE_ARGS =	--disable-doc
 
-.ifndef DEBUG
-CONFIGURE_ARGS +=	--enable-amalgamation
-.endif
+#.ifndef DEBUG
+#CONFIGURE_ARGS +=	--enable-amalgamation
+#.endif
 
 .include <bsd.port.mk>
