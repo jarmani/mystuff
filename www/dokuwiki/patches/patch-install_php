@@ -1,0 +1,29 @@
+$OpenBSD$
+
+Make install.php working in a symlink farm.
+
+--- install.php.orig	Wed Jan 25 20:39:33 2012
++++ install.php	Sat Feb 18 18:13:43 2012
+@@ -6,6 +6,13 @@
+  */
+ 
+ if(!defined('DOKU_INC')) define('DOKU_INC',dirname(__FILE__).'/');
++
++$dir = dirname($_SERVER['SCRIPT_FILENAME']);
++if(is_dir($dir . '/conf')) {
++    define('DOKU_CONF', $dir . '/conf/');
++    define('DOKU_LOCAL', $dir . '/conf/');
++}
++
+ if(!defined('DOKU_CONF')) define('DOKU_CONF',DOKU_INC.'conf/');
+ if(!defined('DOKU_LOCAL')) define('DOKU_LOCAL',DOKU_INC.'conf/');
+ 
+@@ -49,7 +56,7 @@ $dokuwiki_hash = array(
+     '2010-11-07'   => '7921d48195f4db21b8ead6d9bea801b8',
+     '2011-05-25'   => '4241865472edb6fa14a1227721008072',
+     '2011-11-10'   => 'b46ff19a7587966ac4df61cbab1b8b31',
+-    '2012-01-25'   => '72c083c73608fc43c586901fd5dabb74',
++    '2012-01-25'   => 'f73d27e2027663d05e7c4e05c4f48e31',
+ );
+ 
+ 

@@ -1,0 +1,29 @@
+$OpenBSD$
+--- inc/plugincontroller.class.php.orig	Wed Feb 15 13:44:45 2012
++++ inc/plugincontroller.class.php	Wed Feb 15 14:56:23 2012
+@@ -154,7 +154,7 @@ class Doku_Plugin_Controller {
+                 } elseif ((array_key_exists($plugin,$this->tmp_plugins) && $this->tmp_plugins[$plugin] == 1)) {
+                     $all_plugins[$plugin] = 1;
+                 } else {
+-                    $all_plugins[$plugin] = 1;
++                    $all_plugins[$plugin] = 0;
+                 }
+             }
+             $this->tmp_plugins = $all_plugins;
+@@ -218,6 +218,7 @@ class Doku_Plugin_Controller {
+         $backup = $this->tmp_plugins;
+         //Can't do anything about protected one so rule them out completely
+         $local_default = array_diff_key($backup,$this->plugin_cascade['protected']);
++        return $local_default;
+         //Diff between local+default and default
+         //gives us the ones we need to check and save
+         $diffed_ones = array_diff_key($local_default,$this->plugin_cascade['default']);
+@@ -231,7 +232,7 @@ class Doku_Plugin_Controller {
+ 
+     /**
+      * Build the list of plugins and cascade
+-     * 
++     *
+      */
+     function loadConfig() {
+         global $config_cascade;

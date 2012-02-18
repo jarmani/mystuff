@@ -1,0 +1,48 @@
+Dokuwiki has been installed into ${INSTDIR}
+
+  * quick setup / single wiki
+
+With Apache, this directory must be granted at least with this:
+	AllowOverride Limit
+
+You should point this to the DocumentRoot of your web-server:
+	ln -s ../dokuwiki /var/www/htdocs/dokuwiki
+
+Then add to your httpd.conf:
+	<Directory /var/www/dokuwiki>
+		AllowOverride Limit
+	</Directory>
+
+Proceed to complete the installation by opening install.php in your browser.
+If you are upgrading your installation, don't forget to remove install.php.
+
+
+  * symlink farm
+
+You can find documentation on http://www.dokuwiki.org/tips:symlink_farm
+File inc/preload.php define DOKU_CONF, patch from port.
+File conf/dokuwiki.php configure savedir correctly, path from port.
+
+For apache it looks like this :
+
+	mkdir -p /var/www/htdocs/dokuwiki && cd /var/www/htdocs/dokuwiki
+	cp -pr ${INSTDIR}/{data,conf,.htaccess.dist} .
+	# reference some additional files (msg for correct handling of upgrade
+	# notifications and the standard config files)
+	ln -sf ../../../dokuwiki/conf/dokuwiki.php conf/.
+	ln -sf ../../../dokuwiki/conf/{acl.auth,local,users.auth}.php.dist conf/.
+	# www is the web server user
+	chown -R www:www data/ conf/
+	# link require file
+	ln -s ../../dokuwiki/{install.php,index.php,doku.php,feed.php,inc,lib} .
+
+Don't forget to configure your vhost/directory as describe before.
+Finish your installation with install.php and remove the link.
+
+
+  * note about plugin manager
+
+For security reason we remove write access for www in plugins directory.
+In order to work, the plugin manager need write access to ${INSTDIR}/lib/plugins :
+
+	chown www ${INSTDIR}/lib/plugins
