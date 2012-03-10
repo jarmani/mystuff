@@ -2,7 +2,7 @@
 
 COMMENT =	challenging 2D motocross platform game
 
-V =	 	0.5.8
+V =	 	0.5.9
 DISTNAME =	xmoto-${V}-src
 PKGNAME =	xmoto-${V}
 CATEGORIES =	games
