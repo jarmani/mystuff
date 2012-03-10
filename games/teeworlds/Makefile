@@ -2,12 +2,12 @@
 
 COMMENT =	platform game featuring buggers equipped with weapons
 
-V =		0.6.0
-DISTNAME =	teeworlds-${V}-src
+V =		0.6.1
+DISTNAME =	teeworlds-${V}-source
 PKGNAME =	teeworlds-${V}
 CATEGORIES =	games
-WRKSRC =	${WRKDIR}/teeworlds-${V}-source
-WRKDIST =	${WRKDIR}/teeworlds-${V}-source
+WRKSRC =	${WRKDIR}/teeworlds-b177-r50edfd37-source
+WRKDIST =	${WRKDIR}/teeworlds-b177-r50edfd37-source
 
 MAINTAINER =	Jonathan Armani <armani@openbsd.org>
 HOMEPAGE =	http://www.teeworlds.com/
@@ -52,7 +52,7 @@ pre-configure:
 
 # build bam executable - teeworlds own build system
 pre-build:
-	cd ${BAM_WRKSRC} && ${SH} -v make_unix.sh
+	cd ${BAM_WRKSRC} && /bin/sh -v make_unix.sh
 
 do-build:
 	cd ${WRKSRC} && CC=${CC} ${BAM_WRKSRC}/bam -v ${BAM_TARGET}
