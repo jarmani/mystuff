@@ -43,7 +43,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 			    -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			LIBS="-lGL -lm -pthread"
+			LIBS="-lGL -lm -pthread -pthread"
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
 
