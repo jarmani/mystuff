@@ -5,7 +5,7 @@ $OpenBSD$
  /* use gcc endianness definitions when available */
  #if defined(__GNUC__) && !defined(__APPLE__)
  	#if defined(__FreeBSD__) || defined(__OpenBSD__)
-+                #include <sys/types.h>
-                 #include <sys/endian.h>
++		#include <sys/types.h>
+ 		#include <sys/endian.h>
  	#else
  		#include <endian.h>
