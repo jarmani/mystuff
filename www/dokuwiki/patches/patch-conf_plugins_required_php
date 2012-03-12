@@ -1,0 +1,8 @@
+$OpenBSD$
+--- conf/plugins.required.php.orig	Wed Feb 15 14:07:50 2012
++++ conf/plugins.required.php	Wed Feb 15 14:08:16 2012
+@@ -9,3 +9,4 @@ $plugins['plugin']      = 1;
+ $plugins['config']      = 1;
+ $plugins['usermanager'] = 1;
+ $plugins['revert']      = 1;
++$plugins['info']        = 1;

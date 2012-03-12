@@ -1,12 +1,12 @@
 $OpenBSD$
---- bam.lua.orig	Mon Apr 11 18:58:00 2011
-+++ bam.lua	Mon Apr 11 18:58:39 2011
+--- bam.lua.orig	Sun Jul 31 23:17:00 2011
++++ bam.lua	Sat Mar 10 10:40:08 2012
 @@ -18,7 +18,7 @@ function Script(name)
  	if family == "windows" then
  		return str_replace(name, "/", "\\")
  	end
 -	return "python " .. name
-+	return "${MODPY_BIN} " .. name
++	return "/usr/local/bin/python2.7 " .. name
  end
  
  function CHash(output, ...)

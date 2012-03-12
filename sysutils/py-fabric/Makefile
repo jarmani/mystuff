@@ -9,8 +9,6 @@ CATEGORIES = 		sysutils
 
 HOMEPAGE = 		http://fabfile.org/
 
-MAINTAINER = 		Jonathan Armani <dbd@asystant.net>
-
 # LGPL
 PERMIT_PACKAGE_CDROM = 	Yes
 PERMIT_PACKAGE_FTP = 	Yes

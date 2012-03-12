@@ -2,7 +2,7 @@
 
 COMMENT =	challenging 2D motocross platform game
 
-V =	 	0.5.8
+V =	 	0.5.9
 DISTNAME =	xmoto-${V}-src
 PKGNAME =	xmoto-${V}
 CATEGORIES =	games
@@ -43,7 +43,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 			    -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			LIBS="-lGL -lm -pthread"
+			LIBS="-lGL -lm -pthread -pthread"
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
 

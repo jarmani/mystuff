@@ -1,12 +1,12 @@
 $OpenBSD$
---- src/engine/shared/storage.cpp.orig	Mon Apr 11 18:49:38 2011
-+++ src/engine/shared/storage.cpp	Mon Apr 11 18:49:47 2011
+--- src/engine/shared/storage.cpp.orig	Sun Jul 31 23:17:00 2011
++++ src/engine/shared/storage.cpp	Sat Mar 10 10:40:08 2012
 @@ -5,7 +5,7 @@
  #include "linereader.h"
  
  // compiled-in data-dir path
 -#define DATA_DIR "data"
-+#define DATA_DIR "${PREFIX}/share/teeworlds/data"
++#define DATA_DIR "/usr/local/share/teeworlds/data"
  
  class CStorage : public IStorage
  {

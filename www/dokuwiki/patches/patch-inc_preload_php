@@ -1,0 +1,14 @@
+$OpenBSD$
+--- inc/preload.php.orig	Tue Feb 14 17:36:45 2012
++++ inc/preload.php	Tue Feb 14 17:36:27 2012
+@@ -0,0 +1,10 @@
++<?php
++$dir = dirname($_SERVER['SCRIPT_FILENAME']);
++if(is_dir($dir . '/conf'))
++	define('DOKU_CONF', $dir . '/conf/');
++else {
++	$dir = preg_replace('#lib/(exe|plugin.*)#', 'conf/', $dir);
++	if(is_dir($dir))
++		define('DOKU_CONF', $dir);
++}
++
