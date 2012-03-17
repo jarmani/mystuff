@@ -3,7 +3,18 @@
 # $OpenBSD$
 
 daemon="${TRUEPREFIX}/sbin/ods-signerd"
+daemon_flags="-vvv"
 
 . /etc/rc.d/rc.subr
+
+signer="${TRUEPREFIX}/sbin/ods-signer"
+
+rc_reload() {
+	${signer} reload
+}
+
+rc_stop() {
+	${signer} stop
+}
 
 rc_cmd $1
