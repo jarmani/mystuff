@@ -2,9 +2,9 @@
 
 COMMENT = 		simple pythonic remote deployment tool
 
-MODPY_EGG_VERSION = 	1.3.0
-DISTNAME = 		fabric-${MODPY_EGG_VERSION}
-PKGNAME = 		py-${DISTNAME}
+MODPY_EGG_VERSION = 	1.4.0
+DISTNAME = 		Fabric-${MODPY_EGG_VERSION}
+PKGNAME = 		py-${DISTNAME:L}
 CATEGORIES = 		sysutils
 
 HOMEPAGE = 		http://fabfile.org/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP = 	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP = 	Yes
 
-MASTER_SITES = 	http://kernelinvaders.com/tmp/
+MASTER_SITES =  ${MASTER_SITE_PYPI:=F/Fabric/}
 
 MODULES = 	lang/python
 
