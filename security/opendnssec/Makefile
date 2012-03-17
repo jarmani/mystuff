@@ -24,11 +24,11 @@ CONFIGURE_STYLE =	gnu
 
 NO_REGRESS =		Yes
 
-LIB_DEPENDS =		net/ruby-dnsruby	\
-			textproc/libxml		\
+LIB_DEPENDS =		textproc/libxml		\
 			net/ldns/libldns	\
 			databases/sqlite3
-RUN_DEPENDS =		devel/ruby-gems		\
+RUN_DEPENDS =		net/ruby-dnsruby	\
+			devel/ruby-gems		\
 			security/ruby-ezcrypto	\
 			security/softhsm
 

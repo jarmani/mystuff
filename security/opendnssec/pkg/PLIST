@@ -64,3 +64,6 @@ share/opendnssec/zonelist.rng
 @sample /var/opendnssec/tmp/
 @sample /var/opendnssec/unsigned/
 @sample /var/run/opendnssec/
+@rcscript ${RCDIR}/ods_enforcerd
+@rcscript ${RCDIR}/ods_signerd
+@rcscript ${RCDIR}/ods
