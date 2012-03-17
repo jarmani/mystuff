@@ -2,7 +2,7 @@
 
 COMMENT =		open-source turn-key solution for DNSSEC
 
-DISTNAME =		opendnssec-1.3.4
+DISTNAME =		opendnssec-1.3.7
 
 CATEGORIES =		security
 

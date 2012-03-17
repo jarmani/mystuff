@@ -1,9 +1,9 @@
 @comment $OpenBSD$
-bin/ods-auditor
+@bin bin/ods-auditor
 @bin bin/ods-hsmspeed
 @bin bin/ods-hsmutil
-bin/ods-kasp2html
-bin/ods-kaspcheck
+@bin bin/ods-kasp2html
+@bin bin/ods-kaspcheck
 @bin bin/ods-ksmutil
 lib/opendnssec/
 lib/opendnssec/kasp_auditor/
@@ -29,7 +29,7 @@ lib/opendnssec/time_shift.rb
 @man man/man8/ods-enforcerd.8
 @man man/man8/ods-signer.8
 @man man/man8/ods-signerd.8
-sbin/ods-control
+@bin sbin/ods-control
 @bin sbin/ods-enforcerd
 @bin sbin/ods-signer
 @bin sbin/ods-signerd
