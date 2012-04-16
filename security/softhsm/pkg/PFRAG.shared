@@ -1,2 +1,2 @@
 @comment $OpenBSD$
-lib/libsofthsm.so
+lib/softhsm/libsofthsm.so

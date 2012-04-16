@@ -2,7 +2,7 @@
 
 COMMENT =		cryptographic store accessible through PKCS#11 interface
 
-DISTNAME =		softhsm-1.3.0
+DISTNAME =		softhsm-1.3.2
 SHARED_LIBS=		softhsm	1.3
 
 CATEGORIES =		security
@@ -29,6 +29,7 @@ USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS} -lpthread "
 CONFIGURE_ARGS =	--localstatedir=/var
+CONFIGURE_ARGS +=	--with-sqlite3=/usr/local
 
 NO_REGRESS =		Yes
 

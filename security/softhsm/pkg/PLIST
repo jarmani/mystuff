@@ -2,8 +2,9 @@
 %%SHARED%%
 @bin bin/softhsm
 @bin bin/softhsm-keyconv
-lib/libsofthsm.a
-lib/libsofthsm.la
+lib/softhsm/
+lib/softhsm/libsofthsm.a
+lib/softhsm/libsofthsm.la
 @man man/man1/softhsm-keyconv.1
 @man man/man1/softhsm.1
 @man man/man5/softhsm.conf.5
