@@ -1,0 +1,12 @@
+$OpenBSD$
+--- configure.orig	Wed Mar  7 11:44:20 2012
++++ configure	Mon Apr 16 02:17:35 2012
+@@ -5116,7 +5116,7 @@ fi
+ 		if test "x$SQLITE3_PATH" != "x" && (test -e "$SQLITE3_PATH/lib/libsqlite3.so" || test -e "$SQLITE3_PATH/lib/libsqlite3.dylib"); then :
+   SQLITE3_LIBS="-L$SQLITE3_PATH/lib -lsqlite3"
+ else
+-  SQLITE3_LIBS="-lsqlite3"
++  SQLITE3_LIBS="-L$SQLITE3_PATH/lib -lsqlite3"
+ 
+ fi
+ 	LIBS="$LIBS $SQLITE3_LIBS"
