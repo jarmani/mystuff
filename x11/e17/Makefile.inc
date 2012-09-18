@@ -5,12 +5,7 @@ CATEGORIES ?=		x11
 HOMEPAGE ?=		http://www.enlightenment.org/
 
 MASTER_SITES ?=		http://download.enlightenment.org/releases/ \
-			http://download.enlightenment.org/snapshots/LATEST/ \
-			http://download.enlightenment.org/snapshots/2010-11-12/ \
-			http://download.enlightenment.org/snapshots/2009-06-14/ \
-			http://distfiles.nl/ \
-			ftp://ftp.vantronix.com/pub/mirrors/dlg/ \
-			http://www.itee.uq.edu.au/~dlg/openbsd/
+			http://download.enlightenment.org/snapshots/2012-09-03/
 
 DIST_SUBDIR ?=		e17
 
@@ -20,7 +15,7 @@ MAINTAINER ?=		Jonathan Armani <armani@openbsd.org>
 
 NO_REGRESS ?=		Yes
 
-VERSION ?=		999.65643
+VERSION ?=		999.76015
 
 .ifdef DEBUG
 DEBUG +=		-O0 -g

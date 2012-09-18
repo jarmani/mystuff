@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2011/01/19 18:14:59 landry Exp $
+@comment $OpenBSD$
+lib/enlightenment/modules/access/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/battery/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/clock/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/comp/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
@@ -43,16 +44,19 @@ lib/enlightenment/modules/msgbus/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/modu
 lib/enlightenment/modules/notification/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/ofono/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/pager/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
+lib/enlightenment/modules/quickaccess/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/shot/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/start/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/syscon/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/systray/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/tasks/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/temperature/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
+lib/enlightenment/modules/tiling/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/winlist/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/page_000.so
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/page_010.so
+lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/page_011.so
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/page_020.so
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/page_030.so
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/page_040.so
@@ -68,5 +72,7 @@ lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/page
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/page_140.so
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/page_150.so
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/page_160.so
+lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/page_170.so
 lib/enlightenment/modules/wizard/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/page_200.so
+lib/enlightenment/modules/xkbswitch/openbsd${OSREV}-${FULLARCH}-ver-pre-svn-08/module.so
 lib/enlightenment/preload/e_precache.so

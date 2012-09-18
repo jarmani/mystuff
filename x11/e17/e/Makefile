@@ -18,13 +18,14 @@ WANTLIB += Xrender Xss Xtst c crypto curl dbus-1 econnman0_7x ecore ecore_con
 WANTLIB += ecore_evas ecore_file ecore_imf ecore_imf_evas ecore_input 
 WANTLIB += ecore_input_evas ecore_ipc ecore_x edbus edje eet efreet efreet_mime 
 WANTLIB += efreet_trash ehal eina embryo enotify eofono evas execinfo expat 
-WANTLIB += fontconfig freetype fribidi glib-2.0 idn jpeg lua m pcre pthread ssl 
+WANTLIB += fontconfig freetype fribidi glib-2.0 idn jpeg m pcre pthread ssl 
 WANTLIB += xcb xcb-shape z
 
-LIB_DEPENDS =		x11/e17/edje>=1.1 \
-			x11/e17/efreet>=1.1 \
-			x11/e17/ecore>=1.1 \
-			x11/e17/e_dbus>=1.1 \
+LIB_DEPENDS =		x11/e17/edje>=1.7 \
+			x11/e17/efreet>=1.7 \
+			x11/e17/ecore>=1.7 \
+			x11/e17/e_dbus>=1.7 \
+			x11/e17/eio>=1.7 \
 			devel/libexecinfo
 
 RUN_DEPENDS =		devel/desktop-file-utils

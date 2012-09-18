@@ -1,6 +1,8 @@
 @comment $OpenBSD: PLIST,v 1.2 2011/01/16 00:45:56 laurent Exp $
 %%SHARED%%
 @bin bin/e-notify-send
+@bin bin/e_dbus_async_client_test
+@bin bin/e_dbus_async_server_test
 @bin bin/e_dbus_bluez_test
 @bin bin/e_dbus_connman0_7x_test
 @bin bin/e_dbus_notification_daemon
