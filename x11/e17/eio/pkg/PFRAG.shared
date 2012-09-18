@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@lib lib/libeio.so.${LIBeio_VERSION}
