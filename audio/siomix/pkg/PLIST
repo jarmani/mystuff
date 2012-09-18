@@ -1,0 +1,12 @@
+@comment $OpenBSD$
+include/siomix.h
+@lib lib/libsiomix.so.${LIBsiomix_VERSION}
+@man man/man3/siomix_close.3
+@man man/man3/siomix_eof.3
+@man man/man3/siomix_nfds.3
+@man man/man3/siomix_onctl.3
+@man man/man3/siomix_ondesc.3
+@man man/man3/siomix_open.3
+@man man/man3/siomix_pollfd.3
+@man man/man3/siomix_revents.3
+@man man/man3/siomix_setctl.3
