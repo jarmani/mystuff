@@ -22,5 +22,6 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=py-pf/}
 EXTRACT_SUFX =  .tgz
 
 MODULES = 	lang/python
+NO_REGRESS =	Yes
 
 .include <bsd.port.mk>
