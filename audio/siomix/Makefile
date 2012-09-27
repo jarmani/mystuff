@@ -3,14 +3,14 @@
 SHARED_ONLY =		Yes
 
 COMMENT =		sndio mixer API library
-DISTNAME =		siomix-1.0
+DISTNAME =		siomix-0.1
 PKGNAME =		${DISTNAME}
 
-SHARED_LIBS +=  siomix                    1.0 
+SHARED_LIBS +=  siomix                    2.0 
 
 CATEGORIES =		audio
 
-HOMEPAGE =		www.sndio.org
+HOMEPAGE =		http://www.sndio.org/
 
 MAINTAINER =		Jonathan Armani <armani@openbsd.org>
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		sndio	
 
-MASTER_SITES =		http://www.kernelinvaders.com/audio/
+MASTER_SITES =		${HOMEPAGE}
 
 USE_LIBTOOL =		Yes
 NO_REGRESS =		Yes
