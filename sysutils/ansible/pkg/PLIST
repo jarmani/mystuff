@@ -21,7 +21,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible/callbacks.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/color.py
 lib/python${MODPY_VERSION}/site-packages/ansible/color.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/constants.py
-lib/python${MODPY_VERSION}/site-packages/ansible/constants.py.beforesubst
 lib/python${MODPY_VERSION}/site-packages/ansible/constants.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/errors.py
 lib/python${MODPY_VERSION}/site-packages/ansible/errors.pyc

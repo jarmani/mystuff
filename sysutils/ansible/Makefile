@@ -28,6 +28,6 @@ NO_REGRESS =	Yes
 
 pre-configure:
 		${SUBST_CMD} ${WRKSRC}/lib/ansible/constants.py
-		rm ${WRKSRC}/lib/ansible/constants.py.orig
+		rm ${WRKSRC}/lib/ansible/constants.py.{beforesubst,orig}
 
 .include <bsd.port.mk>
