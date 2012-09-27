@@ -24,10 +24,13 @@ MODPY_BADEGGS =	ansible
 RUN_DEPENDS = 	security/py-paramiko \
 		textproc/py-yaml \
 		www/py-jinja2
-NO_REGRESS =	Yes
+
+REGRESS_DEPENDS =       devel/py-nose
 
 pre-configure:
 		${SUBST_CMD} ${WRKSRC}/lib/ansible/constants.py
 		rm ${WRKSRC}/lib/ansible/constants.py.{beforesubst,orig}
+do-regress:
+		cd ${WRKSRC}/lib && nosetests -v
 
 .include <bsd.port.mk>
