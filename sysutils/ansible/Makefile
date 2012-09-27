@@ -19,12 +19,15 @@ MASTER_SITES =  https://github.com/downloads/ansible/ansible/
 MODULES = 	lang/python
 
 MODPY_SETUPTOOLS = Yes
-MODPY_DISTUTILS_INSTALL = install --prefix=${LOCALBASE} \
-			  --root=${DESTDIR}
+MODPY_BADEGGS =	ansible
 
 RUN_DEPENDS = 	security/py-paramiko \
 		textproc/py-yaml \
 		www/py-jinja2
 NO_REGRESS =	Yes
+
+pre-configure:
+		${SUBST_CMD} ${WRKSRC}/lib/ansible/constants.py
+		rm ${WRKSRC}/lib/ansible/constants.py.orig
 
 .include <bsd.port.mk>
