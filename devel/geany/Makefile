@@ -4,7 +4,7 @@ SHARED_ONLY=	Yes
 
 COMMENT=	small and lightweight IDE
 
-DISTNAME=	geany-0.21
+DISTNAME=	geany-1.22
 
 CATEGORIES=	devel
 
@@ -19,14 +19,12 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://download.geany.org/
-EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext \
 		textproc/intltool
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
@@ -38,7 +36,8 @@ WANTLIB += xcb-render xcb-shm z ffi
 
 LIB_DEPENDS=	x11/gtk+2
 RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/vte
+		devel/vte \
+		x11/gtk+2,-guic
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
