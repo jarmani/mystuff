@@ -3,6 +3,8 @@
 COMMENT =		EFL C like scripting language
 DISTNAME =		embryo-1.7.0
 
+EPOCH =			2
+
 SHARED_LIBS +=		embryo 1.7
 
 # BSD

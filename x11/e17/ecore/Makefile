@@ -3,6 +3,8 @@
 COMMENT =		EFL core event/X abstraction layer
 DISTNAME =		ecore-1.7.0
 
+EPOCH =			2
+
 SO_VERSION =		1.7
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.

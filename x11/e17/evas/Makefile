@@ -3,6 +3,8 @@
 COMMENT =		EFL canvas API for X
 DISTNAME =		evas-1.7.0
 
+EPOCH =			2
+
 SHARED_LIBS +=		evas 1.7
 
 # BSD

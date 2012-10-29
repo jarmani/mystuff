@@ -3,6 +3,8 @@
 COMMENT =		EFL complex graphical design & layout library
 DISTNAME =		edje-1.7.0
 
+EPOCH =			2
+
 SHARED_LIBS +=		edje 1.7
 
 # BSD

@@ -3,6 +3,8 @@
 COMMENT =		EFL DBus component
 DISTNAME =		e_dbus-1.7.0
 
+EPOCH =			1
+
 SO_VERSION =		1.7
 .for _lib in edbus enotify ehal eofono ebluez eukit
 SHARED_LIBS +=		${_lib} ${SO_VERSION}
