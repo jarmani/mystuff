@@ -1,8 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2011/01/16 00:45:56 laurent Exp $
-@lib lib/libebluez.so.${LIBebluez_VERSION}
-@lib lib/libeconnman0_7x.so.${LIBeconnman0_7x_VERSION}
-@lib lib/libedbus.so.${LIBedbus_VERSION}
-@lib lib/libehal.so.${LIBehal_VERSION}
-@lib lib/libenotify.so.${LIBenotify_VERSION}
-@lib lib/libeofono.so.${LIBeofono_VERSION}
-@lib lib/libeukit.so.${LIBeukit_VERSION}
