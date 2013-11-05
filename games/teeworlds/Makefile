@@ -2,12 +2,10 @@
 
 COMMENT =	platform game featuring buggers equipped with weapons
 
-V =		0.6.1
+V =		0.6.2
 DISTNAME =	teeworlds-${V}-source
 PKGNAME =	teeworlds-${V}
 CATEGORIES =	games
-WRKSRC =	${WRKDIR}/teeworlds-b177-r50edfd37-source
-WRKDIST =	${WRKDIR}/teeworlds-b177-r50edfd37-source
 
 MAINTAINER =	Jonathan Armani <armani@openbsd.org>
 HOMEPAGE =	http://www.teeworlds.com/
@@ -18,20 +16,17 @@ BAM_TARGET =	release
 
 MASTER_SITES =	http://www.teeworlds.com/files/ \
 		https://github.com/downloads/matricks/bam/
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} bam-${BAM_VERSION}.zip
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} bam-${BAM_VERSION}${EXTRACT_SUFX}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	GL GLU SDL X11 c m pthread stdc++ z freetype
 LIB_DEPENDS =	devel/sdl
 
 MODULES =	lang/python
 
-NO_REGRESS =	Yes
+NO_TESTS =	Yes
 
 GAMEDIR =	${PREFIX}/share/teeworlds
 
@@ -42,7 +37,7 @@ post-extract:
 
 pre-configure:
 	${SUBST_CMD}	${WRKSRC}/src/engine/shared/storage.cpp\
-		${WRKSRC}/scripts/make_src.py \
+		${WRKSRC}/scripts/*.py \
 		${WRKSRC}/scripts/font_installer.sh \
 		${WRKSRC}/bam.lua \
 		${BAM_WRKSRC}/src/node.h \

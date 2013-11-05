@@ -1,9 +1,9 @@
 $OpenBSD$
---- src/base/detect.h.orig	Sat Mar 10 11:03:51 2012
-+++ src/base/detect.h	Sat Mar 10 11:00:55 2012
+--- src/base/detect.h.orig	Wed May  1 13:47:39 2013
++++ src/base/detect.h	Mon Oct 14 21:52:22 2013
 @@ -79,6 +79,7 @@
  /* use gcc endianness definitions when available */
- #if defined(__GNUC__) && !defined(__APPLE__)
+ #if defined(__GNUC__) && !defined(__APPLE__) && !defined(__MINGW32__) && !defined(__sun)
  	#if defined(__FreeBSD__) || defined(__OpenBSD__)
 +		#include <sys/types.h>
  		#include <sys/endian.h>
