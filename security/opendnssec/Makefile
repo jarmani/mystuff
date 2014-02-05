@@ -2,7 +2,7 @@
 
 COMMENT =		open-source turn-key solution for DNSSEC
 
-DISTNAME =		opendnssec-1.3.7
+DISTNAME =		opendnssec-1.4.3
 
 CATEGORIES =		security
 
@@ -13,7 +13,6 @@ MAINTAINER =		Fabien Romano <fabien@openbsd.org>
 # XXX
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c crypto iconv ldns m pthread sqlite3 xml2 z
@@ -22,15 +21,12 @@ MASTER_SITES =		http://www.opendnssec.org/files/source/
 
 CONFIGURE_STYLE =	gnu
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 LIB_DEPENDS =		textproc/libxml		\
 			net/ldns/libldns	\
 			databases/sqlite3
-RUN_DEPENDS =		net/ruby-dnsruby	\
-			devel/ruby-gems		\
-			security/ruby-ezcrypto	\
-			security/softhsm
+RUN_DEPENDS =		security/softhsm
 
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lpthread" \
@@ -42,5 +38,8 @@ post-install:
 	@cd ${WRKSRC}/conf && ${INSTALL_DATA} *.xml \
 	  ${PREFIX}/share/examples/opendnssec
 	@cd ${WRKINST} && rm -rf etc/opendnssec
+	${INSTALL_DATA_DIR} ${PREFIX}/share/opendnssec/utils
+	@cd ${WRKSRC}/enforcer/utils/ && ${INSTALL_DATA} *migrate* \
+	  ${PREFIX}/share/opendnssec/utils
 
 .include <bsd.port.mk>

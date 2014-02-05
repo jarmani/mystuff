@@ -1,24 +1,9 @@
 @comment $OpenBSD$
-@bin bin/ods-auditor
 @bin bin/ods-hsmspeed
 @bin bin/ods-hsmutil
 @bin bin/ods-kasp2html
 @bin bin/ods-kaspcheck
 @bin bin/ods-ksmutil
-lib/opendnssec/
-lib/opendnssec/kasp_auditor/
-lib/opendnssec/kasp_auditor.rb
-lib/opendnssec/kasp_auditor/auditor.rb
-lib/opendnssec/kasp_auditor/changed_config.rb
-lib/opendnssec/kasp_auditor/commands.rb
-lib/opendnssec/kasp_auditor/config.rb
-lib/opendnssec/kasp_auditor/key_tracker.rb
-lib/opendnssec/kasp_auditor/parse.rb
-lib/opendnssec/kasp_auditor/partial_auditor.rb
-lib/opendnssec/kasp_auditor/preparser.rb
-lib/opendnssec/kasp_checker.rb
-lib/opendnssec/time_shift.rb
-@man man/man1/ods-auditor.1
 @man man/man1/ods-hsmspeed.1
 @man man/man1/ods-hsmutil.1
 @man man/man1/ods-kaspcheck.1
@@ -35,27 +20,40 @@ lib/opendnssec/time_shift.rb
 @bin sbin/ods-signerd
 share/examples/opendnssec/
 @sample ${SYSCONFDIR}/opendnssec/
+share/examples/opendnssec/addns.xml
+@sample ${SYSCONFDIR}/opendnssec/addns.xml
 share/examples/opendnssec/conf.xml
 @sample ${SYSCONFDIR}/opendnssec/conf.xml
+share/examples/opendnssec/enforcerstate.xml
+@sample ${SYSCONFDIR}/opendnssec/enforcerstate.xml
 share/examples/opendnssec/kasp.xml
 @sample ${SYSCONFDIR}/opendnssec/kasp.xml
 share/examples/opendnssec/signconf.xml
 @sample ${SYSCONFDIR}/opendnssec/signconf.xml
-share/examples/opendnssec/zonefetch.xml
-@sample ${SYSCONFDIR}/opendnssec/zonefetch.xml
 share/examples/opendnssec/zonelist.xml
 @sample ${SYSCONFDIR}/opendnssec/zonelist.xml
 share/opendnssec/
+share/opendnssec/addns.rnc
+share/opendnssec/addns.rng
 share/opendnssec/conf.rnc
 share/opendnssec/conf.rng
 share/opendnssec/database_create.sqlite3
+share/opendnssec/enforcerstate.rnc
+share/opendnssec/enforcerstate.rng
 share/opendnssec/kasp.rnc
 share/opendnssec/kasp.rng
 share/opendnssec/kasp2html.xsl
 share/opendnssec/signconf.rnc
 share/opendnssec/signconf.rng
-share/opendnssec/zonefetch.rnc
-share/opendnssec/zonefetch.rng
+share/opendnssec/utils/
+share/opendnssec/utils/migrate_adapters_1.mysql
+share/opendnssec/utils/migrate_adapters_1.sqlite3
+share/opendnssec/utils/migrate_id_mysql.pl
+share/opendnssec/utils/migrate_keyshare_mysql.pl
+share/opendnssec/utils/migrate_keyshare_sqlite3.pl
+share/opendnssec/utils/migrate_to_ng_mysql.pl
+share/opendnssec/utils/migrate_to_ng_sqlite.pl
+share/opendnssec/utils/migrate_zone_delete.mysql
 share/opendnssec/zonelist.rnc
 share/opendnssec/zonelist.rng
 @sample /var/opendnssec/

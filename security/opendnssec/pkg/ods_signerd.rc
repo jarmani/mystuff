@@ -3,7 +3,7 @@
 # $OpenBSD$
 
 daemon="${TRUEPREFIX}/sbin/ods-signerd"
-daemon_flags="-vvv"
+#daemon_flags="-vvv"
 
 . /etc/rc.d/rc.subr
 
