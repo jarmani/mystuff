@@ -1,14 +1,15 @@
 @comment $OpenBSD$
-%%SHARED%%
 @bin bin/softhsm
 @bin bin/softhsm-keyconv
 lib/softhsm/
 lib/softhsm/libsofthsm.a
 lib/softhsm/libsofthsm.la
+%%SHARED%%
 @man man/man1/softhsm-keyconv.1
 @man man/man1/softhsm.1
 @man man/man5/softhsm.conf.5
 share/examples/softhsm/
 share/examples/softhsm/softhsm.conf
 @sample ${SYSCONFDIR}/softhsm.conf
-@sample /var/softhsm/
+@sample /var/db/softhsm/
+@comment share/examples/softhsm/softhsm.conf.sample

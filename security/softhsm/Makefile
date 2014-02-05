@@ -1,42 +1,37 @@
 # $OpenBSD$
 
-COMMENT =		cryptographic store accessible through PKCS#11 interface
+COMMENT =	software PKCS\#11 cryptographic token
 
-DISTNAME =		softhsm-1.3.2
-SHARED_LIBS=		softhsm	1.3
+DISTNAME =	softhsm-1.3.5
 
-CATEGORIES =		security
+SHARED_LIBS =	softhsm 1.3
+SHARED_ONLY =	Yes
 
-HOMEPAGE =		http://www.opendnssec.org/softhsm/
+CATEGORIES =	security
 
-MAINTAINER =		Fabien Romano <fabien@openbsd.org>
+HOMEPAGE =	http://www.opendnssec.org/softhsm/
 
-# XXX
-PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
+MAINTAINER =	Fabien Romano <fabien@openbsd.org>
+
+# BSD
+PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += botan-1.10 bz2 c crypto gmp m pthread sqlite3 stdc++ z
 
-MASTER_SITES =		http://www.opendnssec.org/files/source/
+MASTER_SITES =	http://dist.opendnssec.org/source/
 
-LIB_DEPENDS =		security/botan \
-			databases/sqlite3
+LIB_DEPENDS =	security/botan
 
 USE_LIBTOOL =		Yes
 
+SEPARATE_BUILD =	Yes
+
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS} -lpthread "
-CONFIGURE_ARGS =	--localstatedir=/var
-CONFIGURE_ARGS +=	--with-sqlite3=/usr/local
+CONFIGURE_ARGS =	${CONFIGURE_SHARED}
+CONFIGURE_ARGS +=	--with-botan=${LOCALBASE}
 
-NO_REGRESS =		Yes
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/softhsm
-	@cd ${WRKSRC} && ${INSTALL_DATA} *.conf \
-	  ${PREFIX}/share/examples/softhsm
-	@cd ${WRKINST} && rm -rf etc/*.conf*
+FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/softhsm
 
 .include <bsd.port.mk>
+
+#USE_GMAKE =		Yes
