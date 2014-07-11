@@ -1,9 +1,0 @@
-$OpenBSD$
---- scripts/compiler.py.orig	Mon Oct 14 22:01:01 2013
-+++ scripts/compiler.py	Mon Oct 14 22:01:55 2013
-@@ -1,4 +1,4 @@
--#!/usr/bin/python
-+#!${MODPY_BIN}
- 
- import sys
- import struct
