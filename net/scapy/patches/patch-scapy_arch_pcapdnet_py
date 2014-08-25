@@ -1,7 +1,7 @@
 $OpenBSD: patch-scapy_arch_pcapdnet_py,v 1.1 2010/10/05 09:18:05 armani Exp $
---- scapy/arch/pcapdnet.py.orig	Tue Oct  5 10:14:39 2010
-+++ scapy/arch/pcapdnet.py	Tue Oct  5 10:16:27 2010
-@@ -63,6 +63,8 @@ if conf.use_pcap:    
+--- scapy/arch/pcapdnet.py.orig	Wed Aug 11 01:09:39 2010
++++ scapy/arch/pcapdnet.py	Mon Aug 25 06:41:01 2014
+@@ -66,6 +66,8 @@ if conf.use_pcap:    
                      return ts,pkt
                  def __getattr__(self, attr):
                      return getattr(self.pcap, attr)
