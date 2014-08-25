@@ -2,9 +2,8 @@
 
 COMMENT=	powerful interactive packet manipulation in python
 
-MODPY_EGG_VERSION=	2.1.0
+MODPY_EGG_VERSION=	2.2.0
 DISTNAME=		scapy-${MODPY_EGG_VERSION}
-REVISION=		2
 
 CATEGORIES=		net
 
