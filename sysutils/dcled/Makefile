@@ -15,13 +15,13 @@ PERMIT_PACKAGE_CDROM = Yes
 
 MASTER_SITES=	http://www.last-outpost.com/~malakai/dcled/
 
-WANTLIB += c m pthread usb usb-1.0
+WANTLIB += c m pthread usb-1.0
 
-LIB_DEPENDS =	devel/libusb-compat
+LIB_DEPENDS =	devel/libusb1
 
-MAKE_FLAGS =	CC=${CC} \
-		LIBUSB_CFLAGS=-I/usr/local/include/libusb-1.0 \
-		LIBUSB_LIBS="-L/usr/local/lib -lusb"
+MAKE_FLAGS =	CC="${CC}" \
+		LIBUSB_CFLAGS="`pkg-config --cflags libusb-1.0`" \
+		LIBUSB_LIBS="`pkg-config --libs libusb-1.0`"
 
 FAKE_FLAGS =	INSTALLDIR=${WRKINST}${PREFIX}/bin \
 		FONTDIR=${WRKINST}${PREFIX}/share/dcled
