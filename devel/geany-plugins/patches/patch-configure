@@ -1,7 +1,16 @@
 $OpenBSD$
---- configure.orig	Mon Oct 18 11:14:46 2010
-+++ configure	Mon Oct 18 11:14:57 2010
-@@ -16651,7 +16651,8 @@ GPEOF
+--- configure.orig	Sun Apr 13 19:12:39 2014
++++ configure	Sun Oct  5 14:59:26 2014
+@@ -20935,7 +20935,7 @@ fi
+ # We need space, tab and new line, in precisely that order.  Quoting is
+ # there to prevent editors from complaining about space-tab.
+ # (If _AS_PATH_WALK were called with IFS unset, it would disable word
+-# splitting by setting IFS to empty value.)
++# splitting by setting IFS to em2 value.)
+ IFS=" ""	$as_nl"
+ 
+ # Find who we are.  Look in the path if we contain no directory separator.
+@@ -23245,7 +23245,8 @@ GPEOF
          status=${line#*:}
          let extracols=34-${#plugin}
          echo -n "$plugin"
@@ -11,12 +20,22 @@ $OpenBSD$
              echo -n ' '
          done
          echo $status
-@@ -16668,7 +16669,8 @@ GPEOF
+@@ -23262,7 +23263,8 @@ GPEOF
          status=${line#*:}
          let extracols=34-${#plugin}
          echo -n "$plugin"
 -        for (( i=0; $i<$extracols; i++ )); do
 +        for i in $(jot $extracols 1 $extracols 1) 
++        do
+             echo -n ' '
+         done
+         echo $status
+@@ -23279,7 +23281,8 @@ GPEOF
+         status=${line#*:}
+         let extracols=34-${#plugin}
+         echo -n "$plugin"
+-        for (( i=0; $i<$extracols; i++ )); do
++        for i in $(jot $extracols 1 $extracols 1)
 +        do
              echo -n ' '
          done

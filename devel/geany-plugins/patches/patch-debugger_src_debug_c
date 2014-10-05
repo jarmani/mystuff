@@ -1,0 +1,16 @@
+$OpenBSD$
+--- debugger/src/debug.c.orig	Tue Jul 10 08:26:29 2012
++++ debugger/src/debug.c	Sun Oct  5 16:54:34 2014
+@@ -37,7 +37,12 @@ int grantpt(int fd);
+ 
+ #include <string.h>
+ #include <unistd.h>
++#ifdef __OpenBSD__
++#include <termios.h>
++#include <util.h>
++#else
+ #include <pty.h>
++#endif
+ #include <gtk/gtk.h>
+ #include <gdk/gdkkeysyms.h>
+ #include <vte/vte.h>
