@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/09/27 08:00:51 ajacoutot Exp $
 
 COMMENT =	userland driver for Dream Link USB LED Message Board
 
-DISTNAME =	dcled-2.2
+V =		2.2
+DISTNAME =	dcled-${V}
 EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	sysutils
@@ -19,15 +20,19 @@ WANTLIB += c m pthread usb-1.0
 
 LIB_DEPENDS =	devel/libusb1
 
-MAKE_FLAGS =	CC="${CC}" \
-		LIBUSB_CFLAGS="`pkg-config --cflags libusb-1.0`" \
-		LIBUSB_LIBS="`pkg-config --libs libusb-1.0`"
-
-FAKE_FLAGS =	INSTALLDIR=${WRKINST}${PREFIX}/bin \
-		FONTDIR=${WRKINST}${PREFIX}/share/dcled
-
-MAKE_FILE =	makefile
-
 NO_TEST =	Yes
+
+FONTDIR =	${PREFIX}/share/dcled
+CFLAGS +=	-DFONTDIR=\"${FONTDIR}\"
+CFLAGS +=	-DDCLEDVERSION=\"${V}\"
+
+do-build:
+	cd ${WRKSRC} && \
+	${CC} ${CFLAGS} `pkg-config --cflags --libs libusb-1.0` -lm dcled.c -o dcled
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/dcled ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/dcled/
+	${INSTALL_DATA} ${WRKSRC}/fonts/*.dlf ${FONTDIR}
 
 .include <bsd.port.mk>
