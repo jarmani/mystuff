@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/09/27 08:00:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2014/10/06 21:36:32 armani Exp $
 
 COMMENT =	userland driver for Dream Link USB LED Message Board
 
