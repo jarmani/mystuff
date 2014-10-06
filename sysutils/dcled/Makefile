@@ -32,7 +32,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dcled ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/dcled/
+	${INSTALL_DATA_DIR} ${FONTDIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts/*.dlf ${FONTDIR}
 
 .include <bsd.port.mk>
