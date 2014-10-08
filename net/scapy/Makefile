@@ -23,7 +23,7 @@ RUN_DEPENDS=	net/libdnet,-python \
 		net/py-libpcap \
 		security/py-crypto \
 		math/py-gnuplot
-TEST_DEPENDS=${RUN_DEPENDS}
+TEST_DEPENDS=	${RUN_DEPENDS}
 
 PKG_ARCH=	*
 

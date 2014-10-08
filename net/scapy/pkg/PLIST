@@ -4,7 +4,7 @@
 bin/UTscapy
 bin/scapy
 lib/python${MODPY_VERSION}/site-packages/scapy/
-lib/python${MODPY_VERSION}/site-packages/scapy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME\-}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/scapy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/scapy/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/all.py
@@ -118,6 +118,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/rip.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/rip.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/rtp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/rtp.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/sctp.py
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/sctp.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/sebek.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/sebek.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/skinny.py
@@ -128,6 +130,8 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/snmp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/snmp.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tftp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/tftp.pyc
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/vrrp.py
+lib/python${MODPY_VERSION}/site-packages/scapy/layers/vrrp.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/x509.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/x509.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/main.py
