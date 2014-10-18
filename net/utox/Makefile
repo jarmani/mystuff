@@ -2,7 +2,7 @@
 
 COMMENT =		lightweight Tox client
 
-DISTNAME =		utox-20141008
+DISTNAME =		utox-20141018
 
 CATEGORIES =		net telephony
 
@@ -17,7 +17,7 @@ WANTLIB += X11 Xext Xrender c dbus-1 fontconfig freetype m openal
 WANTLIB += opus pthread sodium toxav toxcore toxdns toxencryptsave
 WANTLIB += vpx z
 
-GH_COMMIT =		0a02d0c677781a8554ce57f9db07d713df61917b
+GH_COMMIT =		cf14faad8c1c15536712593b14188eb6d749c0c3
 GH_ACCOUNT =		notsecure
 GH_PROJECT = 		uTox
 

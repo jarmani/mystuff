@@ -1,16 +1,16 @@
 $OpenBSD$
---- Makefile.orig	Tue Oct  7 14:48:45 2014
-+++ Makefile	Wed Oct  8 14:33:56 2014
-@@ -3,7 +3,7 @@
+--- Makefile.orig	Fri Oct 17 18:04:49 2014
++++ Makefile	Sat Oct 18 09:48:28 2014
+@@ -1,7 +1,7 @@
+ ## OPTIONS ##
+ # set to anything else to disable them
  DBUS = 1
+-V4LCONVERT = 1
++V4LCONVERT = 0
  
  DEPS = fontconfig freetype2 libtoxav libtoxcore
--DEPS += libv4lconvert openal vpx x11 xext xrender
-+DEPS += openal vpx x11 xext xrender
- ifeq ($(DBUS), 1)
- 	DEPS += dbus-1
- endif
-@@ -36,42 +36,42 @@ utox: $(OBJ)
+ DEPS += openal vpx x11 xext xrender
+@@ -46,42 +46,42 @@ utox: $(OBJ)
  	@$(CC) $(CFLAGS) -o utox $(OBJ) $(LDFLAGS)
  
  install: utox
