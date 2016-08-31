@@ -1,0 +1,75 @@
+$OpenBSD: patch-bam_lua,v 1.1 2015/12/27 17:56:22 jasper Exp $
+
+- Don't enforce stack protector
+- Don't hardcode python
+- Make it possible to use wavpack as an external dependency (from Debian)
+- Fix zlib external dependency (from Debian)
+
+--- bam.lua.orig	Wed Aug 24 11:11:20 2016
++++ bam.lua	Fri Aug 26 22:06:35 2016
+@@ -24,7 +24,6 @@ Import("other/mysql/mysql.lua")
+ --- Setup Config -------
+ config = NewConfig()
+ config:Add(OptCCompiler("compiler"))
+-config:Add(OptTestCompileC("stackprotector", "int main(){return 0;}", "-fstack-protector -fstack-protector-all"))
+ config:Add(OptTestCompileC("minmacosxsdk", "int main(){return 0;}", "-mmacosx-version-min=10.7 -isysroot /Developer/SDKs/MacOSX10.7.sdk"))
+ config:Add(OptTestCompileC("macosxppc", "int main(){return 0;}", "-arch ppc"))
+ config:Add(OptLibrary("zlib", "zlib.h", false))
+@@ -36,6 +35,7 @@ config:Add(Opus.OptFind("opus", true))
+ config:Add(Ogg.OptFind("ogg", true))
+ config:Add(Mysql.OptFind("mysql", false))
+ config:Add(OptString("websockets", false))
++--- config:Add(OptLibrary("wavpack", "wavpack/wavpack.h", false))
+ config:Finalize("config.lua")
+ 
+ -- data compiler
+@@ -43,7 +43,7 @@ function Script(name)
+ 	if family == "windows" and target_family ~= "windows" then
+ 		return str_replace(name, "/", "\\")
+ 	end
+-	return "python " .. name
++	return "/usr/local/bin/python2.7 " .. name
+ end
+ 
+ function CHash(output, ...)
+@@ -242,9 +242,6 @@ function build(settings)
+ 				settings.cc.flags:Add("-isysroot /Developer/SDKs/MacOSX10.7.sdk")
+ 				settings.link.flags:Add("-isysroot /Developer/SDKs/MacOSX10.7.sdk")
+ 			end
+-		elseif config.stackprotector.value == 1 then
+-			settings.cc.flags:Add("-fstack-protector", "-fstack-protector-all")
+-			settings.link.flags:Add("-fstack-protector", "-fstack-protector-all")
+ 		end
+ 	end
+ 
+@@ -279,7 +276,7 @@ function build(settings)
+ 	end
+ 
+ 	-- compile zlib if needed
+-	if config.zlib.value == 1 then
++	if config.zlib.value then
+ 		settings.link.libs:Add("z")
+ 		if config.zlib.include_path then
+ 			settings.cc.includes:Add(config.zlib.include_path)
+@@ -290,8 +287,20 @@ function build(settings)
+ 		settings.cc.includes:Add("src/engine/external/zlib")
+ 	end
+ 
++	--[[ compile wavpack if needed
++	if config.wavpack.value then
++		settings.link.libs:Add("wavpack")
++		if config.wavpack.include_path then
++			settings.cc.includes:Add(config.wavpack.include_path .. "/include")
++			settings.link.libpath:Add(config.wavpack.include_path .. "/lib")
++		end
++		wavpack = {}
++	else ]]--
++		wavpack = Compile(settings, Collect("src/engine/external/wavpack/*.c"))
++		settings.cc.includes:Add("src/engine/external")
++	-- end
++
+ 	-- build the small libraries
+-	wavpack = Compile(settings, Collect("src/engine/external/wavpack/*.c"))
+ 	pnglite = Compile(settings, Collect("src/engine/external/pnglite/*.c"))
+ 	jsonparser = Compile(settings, Collect("src/engine/external/json-parser/*.c"))
+ 	md5 = Compile(settings, "src/engine/external/md5/md5.c")
