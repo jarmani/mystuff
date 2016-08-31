@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2013/08/20 22:05:50 zhuk Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.47 2016/03/18 23:12:16 naddy Exp $
 
 COMMENT=	small and lightweight IDE
 
-DISTNAME =	geany-1.24.1
+DISTNAME =	geany-1.26
+SHARED_LIBS +=  geany                     0.0 # 0.0
 
 CATEGORIES=	devel
 
@@ -34,13 +33,21 @@ WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 LIB_DEPENDS=	x11/gtk+2
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/vte \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
+FAKE_FLAGS=	doc_DATA="${WRKSRC}/README"
 LIBTOOL_FLAGS =	--tag=disable-static
 
 CONFIGURE_STYLE=gnu
+# Don't rebuild html/pdf docs, use whatever is included in the tarball
+CONFIGURE_ARGS+=--enable-html-docs=no \
+		--enable-pdf-docs=no \
+		--enable-api-docs=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# XXX: Upstream omitted include test/ctags/runner.sh in the tarball
+NO_TEST=	Yes
 
 post-install:
 	rm -f ${PREFIX}/lib/geany/*.la
