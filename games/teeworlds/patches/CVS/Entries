@@ -1,5 +1,3 @@
-/patch-bam-0_4_0_make_unix_sh/1.1/Wed Aug 31 17:50:34 2016//
-/patch-bam-0_4_0_src_driver_gcc_lua/1.1/Wed Aug 31 17:50:34 2016//
 /patch-bam_lua/1.1/Wed Aug 31 17:50:34 2016//
 /patch-scripts_build_py/1.1/Wed Aug 31 17:50:34 2016//
 /patch-scripts_compiler_py/1.1/Wed Aug 31 17:50:34 2016//
@@ -9,4 +7,6 @@
 /patch-src_engine_client_sound_h/1.1/Wed Aug 31 17:50:34 2016//
 /patch-src_engine_shared_storage_cpp/1.1/Wed Aug 31 17:50:34 2016//
 /patch-src_game_client_gameclient_cpp/1.1/Wed Aug 31 17:50:34 2016//
+/patch-bam-0_4_0_make_unix_sh/-1.1/dummy timestamp//
+/patch-bam-0_4_0_src_driver_gcc_lua/-1.1/dummy timestamp//
 D
