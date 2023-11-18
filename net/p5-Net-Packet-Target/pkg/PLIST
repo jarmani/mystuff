@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Net/Packet/Target.pm
-@man man/man3p/Net::Packet::Target.3p
