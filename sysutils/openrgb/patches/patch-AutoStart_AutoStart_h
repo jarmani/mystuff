@@ -1,0 +1,11 @@
+Index: AutoStart/AutoStart.h
+--- AutoStart/AutoStart.h.orig
++++ AutoStart/AutoStart.h
+@@ -39,6 +39,6 @@ class AutoStartInterface (protected)
+ #include "AutoStart-MacOS.h"
+ #endif
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include "AutoStart-FreeBSD.h"
+ #endif

@@ -1,0 +1,12 @@
+Index: ResourceManager.cpp
+--- ResourceManager.cpp.orig
++++ ResourceManager.cpp
+@@ -843,7 +843,7 @@ void ResourceManager::DetectDevicesThreadFunction()
+     /*-------------------------------------------------*\
+     | Initialize HID interface for detection            |
+     \*-------------------------------------------------*/
+-    int hid_status = hid_init();
++    int hid_status = hidapi_hid_init();
+ 
+     LOG_INFO("Initializing HID interfaces: %s", ((hid_status == 0) ? "Success" : "Failed"));
+ 
