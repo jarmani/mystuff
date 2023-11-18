@@ -1,5 +1,5 @@
 
-COMMENT =	RGB lighting control that doesn't depend on manufacturer software
+COMMENT =	RGB lighting control
 
 DISTNAME =	OpenRGB-release_0.9
 # PKGNAME defaults to DISTNAME unless changed
@@ -49,6 +49,7 @@ PERMIT_DISTFILES =	Yes
 
 # "make port-lib-depends-check" can help
 #WANTLIB =		???
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Widgets c m
 
 # where the source files and patches can be fetched
 #

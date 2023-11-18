@@ -1,0 +1,66 @@
+Index: OpenRGB.pro
+--- OpenRGB.pro.orig
++++ OpenRGB.pro
+@@ -1972,6 +1972,62 @@ contains(QMAKE_PLATFORM, freebsd) {
+     INSTALLS += target desktop icon metainfo rules
+ }
+ 
++contains(QMAKE_PLATFORM, openbsd) {
++    TARGET = $$lower($$TARGET)
++
++    INCLUDEPATH +=                                                                              \
++    Controllers/FaustusController                                                               \
++    Controllers/LinuxLEDController                                                              \
++
++    HEADERS +=                                                                                  \
++    AutoStart/AutoStart-FreeBSD.h                                                               \
++    Controllers/ENESMBusController/ENESMBusInterface/ENESMBusInterface_SpectrixS40G.h           \
++    Controllers/FaustusController/RGBController_Faustus.h                                       \
++    Controllers/LinuxLEDController/LinuxLEDController.h                                         \
++    Controllers/LinuxLEDController/RGBController_LinuxLED.h                                     \
++    Controllers/OpenRazerController/RGBController_OpenRazer.h                                   \
++
++    LIBS +=                                                                                     \
++    -lusb-1.0                                                                                       \
++    -lmbedx509                                                                                  \
++    -lmbedtls                                                                                   \
++    -lmbedcrypto                                                                                \
++    -lhidapi
++
++    SOURCES +=                                                                                  \
++    dependencies/hueplusplus-1.0.0/src/LinHttpHandler.cpp                                       \
++    serial_port/find_usb_serial_port_linux.cpp                                                  \
++    AutoStart/AutoStart-FreeBSD.cpp                                                             \
++    Controllers/ENESMBusController/XPGSpectrixS40GDetect.cpp                                    \
++    Controllers/ENESMBusController/ENESMBusInterface/ENESMBusInterface_SpectrixS40G.cpp         \
++    Controllers/FaustusController/RGBController_Faustus.cpp                                     \
++    Controllers/LinuxLEDController/LinuxLEDController.cpp                                       \
++    Controllers/LinuxLEDController/LinuxLEDControllerDetect.cpp                                 \
++    Controllers/LinuxLEDController/RGBController_LinuxLED.cpp                                   \
++    Controllers/OpenRazerController/OpenRazerDetect.cpp                                         \
++    Controllers/OpenRazerController/RGBController_OpenRazer.cpp                                 \
++
++    #-------------------------------------------------------------------------------------------#
++    # Set up install paths                                                                      #
++    # These install paths are used for AppImage and .deb packaging                              #
++    #-------------------------------------------------------------------------------------------#
++    isEmpty(PREFIX) {
++        PREFIX = /usr
++    }
++
++    target.path=$$PREFIX/bin/
++    desktop.path=$$PREFIX/share/applications/
++    desktop.files+=qt/OpenRGB.desktop
++    icon.path=$$PREFIX/share/icons/hicolor/128x128/apps/
++    icon.files+=qt/OpenRGB.png
++    metainfo.path=$$PREFIX/share/metainfo/
++    metainfo.files+=qt/org.openrgb.OpenRGB.metainfo.xml
++    rules.path=$$PREFIX/lib/udev/rules.d/
++    rules.files+=60-openrgb.rules
++    INSTALLS += target desktop icon metainfo rules
++}
++
++
+ unix:!macx:CONFIG(asan) {
+     message("ASan Mode")
+     QMAKE_CFLAGS=-fsanitize=address
